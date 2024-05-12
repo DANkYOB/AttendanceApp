@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/ic_circle_shape"
-        android:layout_marginTop="221dp"
+        android:layout_marginTop="148dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,7 +39,7 @@
         android:padding="2dp"
         style="@style/ClickableView"
         android:layout_marginTop="29dp"
-        android:background="@drawable/ic_tv_frame"
+        android:layout_marginStart="91dp"
         app:layout_constraintEnd_toStartOf="@+id/tv_signup"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_app_name" />
@@ -50,13 +50,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="2dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="29dp"
         style="@style/ClickableView"
+        android:gravity="center"
+        android:background="@drawable/ic_tv_frame"
         android:text="@string/signup"
         android:textAppearance="@style/signup"
         android:fontFamily="@font/poppins_medium"
         app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toTopOf="@+id/tv_login" />
+        app:layout_constraintTop_toTopOf="@+id/tv_login" />
 
 
     <TextView
@@ -123,6 +125,39 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+
+    <TextView
+        android:id="@+id/tv_re_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="13dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Re-Enter Password"
+        android:textAppearance="@style/signup"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_password" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_re_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="29dp"
+        android:layout_marginLeft="29dp"
+        android:hint="Re-Enter your Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_re_password">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLength="8" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <TextView
         android:id="@+id/tv_forgot_pass"
         android:layout_width="wrap_content"
@@ -134,7 +169,8 @@
         android:fontFamily="@font/poppins_medium"
         android:textColor="#393C8B"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_password" />
+        app:layout_constraintTop_toBottomOf="@+id/input_re_password"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/btn_login"
@@ -144,7 +180,7 @@
         android:layout_marginLeft="29dp"
         android:layout_marginRight="29dp"
         android:fontFamily="@font/poppins_medium"
-        android:text="SIGN UP"
+        android:text="LOGIN"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_forgot_pass" />
@@ -222,25 +258,25 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/tv_dont_have"
+        android:id="@+id/tv_dontHave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Don't have an account? "
+        android:text="Already have an account? "
         android:layout_marginTop="37dp"
         android:layout_marginStart="98dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectangle_4" />
 
     <TextView
-        android:id="@+id/tv_signup_bottom"
+        android:id="@+id/tv_login_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Signup"
-        android:layout_marginEnd="123dp"
+        android:text="Login"
+        android:layout_marginEnd="113dp"
         android:textColor="#393C8B"
         style="@style/ClickableView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_dont_have" />
+        app:layout_constraintTop_toTopOf="@+id/tv_dontHave" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

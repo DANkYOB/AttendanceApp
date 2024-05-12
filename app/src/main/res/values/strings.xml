@@ -9,6 +9,12 @@
     <string name="signup">Signup</string>
     <string name="login">Login</string>
     <string name="Appp_name">App Name</string>
+    <string name="please_writ">
+Please write your email so receive a confirmation\ncode to be set a new password
+</string>
+    <string name="verification">
+Verification code send to Email address
+</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
