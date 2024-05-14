@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.nelsonfinalyearproject.MainActivity
 import com.example.nelsonfinalyearproject.databinding.ActivityAuthBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -27,6 +28,5 @@ class AuthActivity: AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
-
     }
 }

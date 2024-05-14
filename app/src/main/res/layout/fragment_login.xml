@@ -89,8 +89,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:maxLength="20" />
+            android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -122,7 +121,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:maxLength="8" />
+            android:maxLength="20" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -147,7 +146,7 @@
         android:layout_marginLeft="29dp"
         android:layout_marginRight="29dp"
         android:fontFamily="@font/poppins_medium"
-        android:text="SIGN UP"
+        android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_forgot_pass" />
@@ -238,8 +237,8 @@
         android:id="@+id/tv_signup_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Signup"
-        android:layout_marginEnd="123dp"
+        android:text="Sign up"
+        android:layout_marginEnd="118dp"
         android:textColor="#393C8B"
         style="@style/ClickableView"
         app:layout_constraintEnd_toEndOf="parent"

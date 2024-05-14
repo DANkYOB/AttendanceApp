@@ -72,24 +72,47 @@ class SignupFragment : Fragment() {
                 return@setOnClickListener
             }
 
+            if (password.isEmpty()) {
+                Toast.makeText(requireContext(), "Invalid Confirmation Password", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
-            auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(requireActivity()) { task ->
-                    if (task.isSuccessful) {
-                        Log.d(TAG, "createUserWithEmail:success")
-                        val user = auth.currentUser
-                        updateUI(user)
-                    } else {
-                        // If sign in fails, display a message to the user.
-                        Toast.makeText(
-                            requireContext(),
-                            "Authentication failed.",
-                            Toast.LENGTH_SHORT,
-                        ).show()
-                        Log.e(TAG, "createUserWithEmail:success",task.exception)
-                        updateUI(null)
+            if (password==rePassword){
+
+                auth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(requireActivity()) { task ->
+                        if (task.isSuccessful) {
+                            //Log.d(TAG, "createUserWithEmail:success")
+                            auth.currentUser?.sendEmailVerification()
+                                ?.addOnSuccessListener {
+                                    Toast.makeText(requireContext(),
+                                        "Please Verify your Email",
+                                    Toast.LENGTH_SHORT).show()
+                                    saveData()
+
+                                }
+                                ?.addOnFailureListener{
+                                    Toast.makeText(requireContext(), task.toString(),
+                                        Toast.LENGTH_SHORT).show()
+                                }
+
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Toast.makeText(
+                                requireContext(),
+                                "Verify your email & Login",
+                                Toast.LENGTH_SHORT,
+                            ).show()
+                        }
                     }
-                }
+
+            }else{
+             Toast.makeText(requireContext(),
+                 "Your confirmation password does not match.",
+                 Toast.LENGTH_SHORT).show()
+            }
+
+            findNavController().navigate(R.id.loginFragment)
 
 
         }
@@ -102,10 +125,12 @@ class SignupFragment : Fragment() {
         })
     }
 
-    private fun updateUI(user: FirebaseUser?) {
 
-        val intent = Intent(requireContext(), MainActivity::class.java)
-        startActivity(intent)
+    private fun saveData(){
+
+        val email =binding.emailTIL.editText?.text.toString().trim()
+        val password = binding.passwordTIL.editText?.text.toString().trim()
+        val rePassword = binding.rePasswordTIL.editText?.text.toString().trim()
 
     }
 }
