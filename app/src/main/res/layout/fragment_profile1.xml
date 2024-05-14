@@ -21,59 +21,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="22dp"
-        android:background="@drawable/ic_profile_circle"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginTop="27dp"
+        android:id="@+id/profile_pic"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/ic_profile_pic"
+        app:civ_border_color="#FFFFFF"
+        app:civ_border_width="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <View
-        android:id="@+id/small_circle"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="1.0"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:background="@drawable/ic_ellipse_26"
-        tools:layout_editor_absoluteX="236dp"
-        tools:layout_editor_absoluteY="254dp" />
-
-    <ImageView
-        android:layout_width="24dp"
-        android:layout_height="25dp"
-        android:src="@drawable/ic_camera"
-        app:layout_constraintBottom_toBottomOf="@+id/small_circle"
-        app:layout_constraintEnd_toEndOf="@+id/small_circle"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/small_circle"
-        app:layout_constraintTop_toTopOf="@+id/small_circle"
-        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
-        android:text="Mriganka Tiwasa Bordoloi"
+        android:text="Purab Jyoti Kashyap"
         android:textSize="16sp"
         android:layout_marginTop="27dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
 
     <TextView
         android:id="@+id/tv_department"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_medium"
-        android:text="Computer Science Engineering"
+        android:text="Information Technology"
         android:layout_marginTop="3dp"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,8 +76,123 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_roll_no" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_roll_no"
+        style="@style/ClickableView"/>
 
+    <ImageView
+        android:id="@+id/action_my_profile"
+        style="@style/ClickableView"
+        android:layout_width="433dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="25dp"
+        android:src="@drawable/ic_group_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_profile"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/action_setting1"
+        style="@style/ClickableView"
+        android:layout_width="433dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="468dp"
+        android:src="@drawable/ic_group_13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/action_notifications"
+        style="@style/ClickableView"
+        android:layout_width="433dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="528dp"
+        android:src="@drawable/ic_group_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/action_about"
+        style="@style/ClickableView"
+        android:layout_width="433dp"
+        android:layout_height="36dp"
+
+        android:layout_marginTop="584dp"
+        android:src="@drawable/ic_group_48"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/action_contact_us"
+        style="@style/ClickableView"
+        android:layout_width="433dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="644dp"
+        android:src="@drawable/ic_group_49"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        style="@style/ClickableView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/ic_logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action_contact_us"
+        app:layout_constraintVertical_bias="0.348" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        style="@style/ClickableView"
+        android:layout_width="102dp"
+        android:layout_height="76dp"
+        android:src="@drawable/ic_scan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="841dp" />
+
+    <ImageView
+        android:layout_width="481dp"
+        android:layout_height="116dp"
+        android:src="@drawable/ic_rectangle_3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.666"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <ImageView
+        android:layout_width="39dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/ic_home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/ic_profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
