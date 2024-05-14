@@ -3,18 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeScreenFragment">
+    app:startDestination="@id/profileFragment">
 
 
-    <fragment
-        android:id="@+id/homeScreenFragment"
-        android:name="com.example.nelsonfinalyearproject.Home.HomeScreenFragment"
-        android:label="HomeScreenFragment"
-        tools:layout="@layout/fragment_home_screen">
-        <action
-            android:id="@+id/action_homeScreenFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.nelsonfinalyearproject.profile.ProfileFragment"

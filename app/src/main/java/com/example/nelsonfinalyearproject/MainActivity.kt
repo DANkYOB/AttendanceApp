@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnItemReselectedListener {
 
             if (it.itemId == R.id.action_home){
-                navController.navigate(R.id.homeScreenFragment)
+                navController.navigate(R.id.profileFragment)
         }
             if (it.itemId == R.id.action_profile){
                 navController.navigate(R.id.profileFragment)
