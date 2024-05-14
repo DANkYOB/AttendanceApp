@@ -26,25 +26,21 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_container_view) as NavHostFragment
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragment_container_view) as NavHostFragment
         navController = navHostFragment.navController
 
-        binding.bottomNavigation.setOnItemReselectedListener {
-
-            if (it.itemId == R.id.action_home){
-                navController.navigate(R.id.profileFragment)
-        }
-            if (it.itemId == R.id.action_profile){
+        binding.bottomNavigation.setOnItemSelectedListener {
+            if (it.itemId == R.id.action_home) {
+                navController.navigate(R.id.homeFragment)
+            }
+            if (it.itemId == R.id.action_profile) {
                 navController.navigate(R.id.profileFragment)
             }
 
 
-            return@setOnItemReselectedListener
+
+            return@setOnItemSelectedListener true
         }
-
-
-
-
-
     }
 }
