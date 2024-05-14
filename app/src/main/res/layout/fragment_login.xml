@@ -190,7 +190,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
     <ImageView
-        android:id="@+id/rectangle_4"
+        android:id="@+id/iv_google_icon"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
@@ -231,7 +231,7 @@
         android:layout_marginTop="37dp"
         android:layout_marginStart="98dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_4" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_google_icon" />
 
     <TextView
         android:id="@+id/tv_signup_bottom"

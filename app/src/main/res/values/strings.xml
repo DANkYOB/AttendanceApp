@@ -15,6 +15,7 @@ Please write your email so receive a confirmation\ncode to be set a new password
     <string name="verification">
 Verification code send to Email address
 </string>
+    <string name="default_web_client_id">171370726446-v70uq1n4v4ill8rbdt7jprj36fael0dk.apps.googleusercontent.com</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
