@@ -11,6 +11,8 @@
         android:layout_width="53dp"
         android:layout_height="20dp"
         android:layout_marginTop="84dp"
+        android:layout_marginLeft="161dp"
+        android:layout_marginRight="161dp"
         android:fontFamily="@font/poppins_bold"
         android:gravity="top"
         android:text="Profile"
@@ -43,15 +45,15 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
-        android:layout_width="27dp"
-        android:layout_height="28dp"
+        android:layout_width="24dp"
+        android:layout_height="25dp"
         android:src="@drawable/ic_camera"
         app:layout_constraintBottom_toBottomOf="@+id/small_circle"
         app:layout_constraintEnd_toEndOf="@+id/small_circle"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/small_circle"
         app:layout_constraintTop_toTopOf="@+id/small_circle"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/chan"
@@ -158,16 +160,59 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <ImageView
+        android:id="@+id/imageView"
+        style="@style/ClickableView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="125dp"
+        android:src="@drawable/ic_logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_roll_no" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        style="@style/ClickableView"
+        android:layout_width="102dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/ic_scan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+    <ImageView
+        android:layout_width="532dp"
+        android:layout_height="198dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ic_rectangle_3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.494" />
 
+    <ImageView
+        android:layout_width="39dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="45dp"
+        android:src="@drawable/ic_home"
+        android:layout_marginBottom="34dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.443" />
 
-
-
-
-
-
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_profile"
+        android:layout_marginRight="45.75dp"
+        android:layout_marginBottom="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
