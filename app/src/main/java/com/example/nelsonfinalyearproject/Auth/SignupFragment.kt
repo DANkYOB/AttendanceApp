@@ -1,8 +1,10 @@
 package com.example.nelsonfinalyearproject.Auth
 
 import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,13 +12,18 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.nelsonfinalyearproject.MainActivity
 import com.example.nelsonfinalyearproject.R
 import com.example.nelsonfinalyearproject.databinding.FragmentSignupBinding
+import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.actionCodeSettings
+import com.google.firebase.auth.auth
 
-class SignupFragment: Fragment() {
+class SignupFragment : Fragment() {
     private lateinit var binding: FragmentSignupBinding
-    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,6 +38,10 @@ class SignupFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        // Initialize Firebase Auth
+        auth = Firebase.auth
+
         binding.tvLogin.setOnClickListener {
             findNavController().navigate(R.id.loginFragment)
         }
@@ -44,39 +55,44 @@ class SignupFragment: Fragment() {
         }
 
 
-        firebaseAuth = FirebaseAuth.getInstance()
+
 
         binding.btnSignup.setOnClickListener {
-            val email = binding.emailTIL.toString()
-            val password = binding.passwordTIL.toString()
-            val rePassword = binding.rePasswordTIL.toString()
+            val email =binding.emailTIL.editText?.text.toString().trim()
+            val password = binding.passwordTIL.editText?.text.toString().trim()
+            val rePassword = binding.rePasswordTIL.editText?.text.toString().trim()
 
-            if (email.isNotEmpty() && password.isNotEmpty() && rePassword.isNotEmpty()){
-                if (password == rePassword){
-
-                    firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener {
-                        if(it.isSuccessful){
-
-                        }else{
-                            Toast.makeText(requireContext(),it.exception.toString(),Toast.LENGTH_SHORT).show()
-                        }
-                    }
-
-                }else{
-                    Toast.makeText(requireContext(),"Password is not matching",Toast.LENGTH_SHORT).show()
-                }
-            }else{
-                Toast.makeText(requireContext(),"Empty Fields are not Allowed ",Toast.LENGTH_SHORT).show()
+            if (email.isEmpty()) {
+                Toast.makeText(requireContext(), "Invalid Email", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
+
+            if (password.isEmpty()) {
+                Toast.makeText(requireContext(), "Invalid Password", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+
+            auth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(requireActivity()) { task ->
+                    if (task.isSuccessful) {
+                        Log.d(TAG, "createUserWithEmail:success")
+                        val user = auth.currentUser
+                        updateUI(user)
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Toast.makeText(
+                            requireContext(),
+                            "Authentication failed.",
+                            Toast.LENGTH_SHORT,
+                        ).show()
+                        Log.e(TAG, "createUserWithEmail:success",task.exception)
+                        updateUI(null)
+                    }
+                }
+
+
         }
-
-
-
-
-
-
-
-
 
 
         requireActivity().onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
@@ -84,5 +100,12 @@ class SignupFragment: Fragment() {
                 findNavController().navigateUp()
             }
         })
+    }
+
+    private fun updateUI(user: FirebaseUser?) {
+
+        val intent = Intent(requireContext(), MainActivity::class.java)
+        startActivity(intent)
+
     }
 }

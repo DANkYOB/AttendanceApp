@@ -3,50 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/homeScreenFragment">
+
 
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.nelsonfinalyearproject.Auth.LoginFragment"
-        android:label="LoginFragment"
-        tools:layout="@layout/fragment_login">
-        <action
-            android:id="@+id/action_loginFragment_to_signupFragment"
-            app:destination="@id/signupFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
-            app:destination="@id/forgotPasswordFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/signupFragment"
-        android:name="com.example.nelsonfinalyearproject.Auth.SignupFragment"
-        android:label="SignupFragment"
-        tools:layout="@layout/fragment_signup">
-        <action
-            android:id="@+id/action_signupFragment_to_forgotPasswordFragment"
-            app:destination="@id/forgotPasswordFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/forgotPasswordFragment"
-        android:name="com.example.nelsonfinalyearproject.Auth.ForgotPasswordFragment"
-        android:label="ForgotPasswordFragment"
-        tools:layout="@layout/fragment_forgot_password">
-        <action
-            android:id="@+id/action_forgotPasswordFragment_to_verificationFragment"
-            app:destination="@id/verificationFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/verificationFragment"
-        android:name="com.example.nelsonfinalyearproject.Auth.VerificationFragment"
-        android:label="VerificationFragment"
-        tools:layout="@layout/fragment_verification">
-        <action
-            android:id="@+id/action_verificationFragment_to_newPasswordFragment"
-            app:destination="@id/newPasswordFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/newPasswordFragment"
-        android:name="com.example.nelsonfinalyearproject.Auth.NewPasswordFragment"
-        android:label="NewPasswordFragment"
-        tools:layout="@layout/fragment_new_password"/>
+        android:id="@+id/homeScreenFragment"
+        android:name="com.example.nelsonfinalyearproject.HomeScreenFragment"
+        android:label="HomeScreenFragment"
+        tools:layout="@layout/fragment_home_screen"/>
 </navigation>
