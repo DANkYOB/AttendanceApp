@@ -163,8 +163,7 @@ class LoginFragment : Fragment() {
                 auth.signInWithCredential(credential)
                     .addOnCompleteListener {
                         if (it.isSuccessful){
-                            Toast.makeText(requireContext(),"Done",Toast.LENGTH_LONG).show()
-
+                            updateUI()
                         }else{
                             Toast.makeText(requireContext(),"Failed",Toast.LENGTH_LONG).show()
                         }

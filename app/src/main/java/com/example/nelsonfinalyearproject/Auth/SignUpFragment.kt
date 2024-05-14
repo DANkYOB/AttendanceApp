@@ -1,10 +1,7 @@
 package com.example.nelsonfinalyearproject.Auth
 
 import android.annotation.SuppressLint
-import android.content.ContentValues.TAG
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,16 +9,13 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.nelsonfinalyearproject.MainActivity
 import com.example.nelsonfinalyearproject.R
 import com.example.nelsonfinalyearproject.databinding.FragmentSignupBinding
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.actionCodeSettings
 import com.google.firebase.auth.auth
 
-class SignupFragment : Fragment() {
+class SignUpFragment : Fragment() {
     private lateinit var binding: FragmentSignupBinding
     private lateinit var auth: FirebaseAuth
 
