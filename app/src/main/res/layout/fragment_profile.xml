@@ -11,6 +11,8 @@
         android:layout_width="53dp"
         android:layout_height="20dp"
         android:layout_marginTop="84dp"
+        android:layout_marginLeft="161dp"
+        android:layout_marginRight="161dp"
         android:fontFamily="@font/poppins_bold"
         android:gravity="top"
         android:text="Profile"
@@ -19,39 +21,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+    <de.hdodenhof.circleimageview.CircleImageView
         android:layout_marginTop="27dp"
-        android:background="@drawable/ic_profile_circle"
+        android:id="@+id/profile_pic"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/ic_profile_pic"
+        app:civ_border_color="#FFFFFF"
+        app:civ_border_width="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <View
-        android:id="@+id/small_circle"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:background="@drawable/ic_ellipse_26"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
-        android:layout_width="27dp"
-        android:layout_height="28dp"
-        android:src="@drawable/ic_camera"
-        app:layout_constraintBottom_toBottomOf="@+id/small_circle"
-        app:layout_constraintEnd_toEndOf="@+id/small_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_group_47"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_pic"
+        app:layout_constraintEnd_toEndOf="@+id/profile_pic"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/small_circle"
-        app:layout_constraintTop_toTopOf="@+id/small_circle"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="@+id/profile_pic" />
 
     <ImageView
         android:id="@+id/chan"
@@ -60,7 +50,7 @@
         android:background="@drawable/ic_profile_frame"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/profile_pic"
         android:layout_marginTop="40dp"
         style="@style/ClickableView"/>
 
@@ -158,16 +148,65 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <ImageView
+        android:id="@+id/imageView"
+        style="@style/ClickableView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="125dp"
+        android:src="@drawable/ic_logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_roll_no" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        style="@style/ClickableView"
+        android:layout_width="102dp"
+        android:layout_height="76dp"
+        android:layout_marginBottom="66dp"
+        android:src="@drawable/ic_scan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageView
+        android:layout_width="520dp"
+        android:layout_height="113dp"
+        android:layout_marginTop="900dp"
+        android:src="@drawable/ic_rectangle_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:layout_width="39dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="45dp"
+        android:src="@drawable/ic_home"
+        android:layout_marginBottom="34dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="45.75dp"
+        android:layout_marginBottom="26dp"
+        android:src="@drawable/ic_profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-
-
-
-
-
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_frame_37__1_"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_roll_no" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
