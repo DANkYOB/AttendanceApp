@@ -1,4 +1,4 @@
-package com.example.nelsonfinalyearproject
+package com.example.nelsonfinalyearproject.Auth
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,29 +7,32 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.nelsonfinalyearproject.databinding.FragmentVerificationBinding
+import com.example.nelsonfinalyearproject.R
+import com.example.nelsonfinalyearproject.databinding.FragmentForgotPasswordBinding
 
-class VerificationFragment:Fragment() {
-    private lateinit var binding: FragmentVerificationBinding
+class ForgotPasswordFragment: Fragment() {
+
+    private lateinit var binding: FragmentForgotPasswordBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentVerificationBinding.inflate(layoutInflater)
+        binding = FragmentForgotPasswordBinding.inflate(layoutInflater)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnConfirmCode.setOnClickListener {
-            findNavController().navigate(R.id.newPasswordFragment)
-        }
-
         binding.btnBack.setOnClickListener {
             findNavController().navigateUp()
+        }
+
+        binding.btnSendMail.setOnClickListener {
+            findNavController().navigate(R.id.verificationFragment)
         }
 
         requireActivity().onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
@@ -38,6 +41,5 @@ class VerificationFragment:Fragment() {
             }
         })
     }
-
 
 }

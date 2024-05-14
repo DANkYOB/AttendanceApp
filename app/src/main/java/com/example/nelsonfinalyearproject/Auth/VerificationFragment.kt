@@ -1,4 +1,4 @@
-package com.example.nelsonfinalyearproject
+package com.example.nelsonfinalyearproject.Auth
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,33 +7,30 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.nelsonfinalyearproject.databinding.FragmentSignupBinding
+import com.example.nelsonfinalyearproject.R
+import com.example.nelsonfinalyearproject.databinding.FragmentVerificationBinding
 
-class SignupFragment: Fragment() {
-    private lateinit var binding: FragmentSignupBinding
+class VerificationFragment:Fragment() {
+    private lateinit var binding: FragmentVerificationBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSignupBinding.inflate(layoutInflater)
+        binding = FragmentVerificationBinding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.tvLogin.setOnClickListener {
-            findNavController().navigate(R.id.loginFragment)
+        binding.btnConfirmCode.setOnClickListener {
+            findNavController().navigate(R.id.newPasswordFragment)
         }
 
-        binding.tvLoginBottom.setOnClickListener {
-            findNavController().navigate(R.id.loginFragment)
-        }
-
-        binding.tvForgotPass.setOnClickListener {
-            findNavController().navigate(R.id.forgotPasswordFragment)
+        binding.btnBack.setOnClickListener {
+            findNavController().navigateUp()
         }
 
         requireActivity().onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
@@ -42,4 +39,6 @@ class SignupFragment: Fragment() {
             }
         })
     }
+
+
 }

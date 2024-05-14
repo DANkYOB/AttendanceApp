@@ -1,4 +1,4 @@
-package com.example.nelsonfinalyearproject
+package com.example.nelsonfinalyearproject.Auth
 
 import android.os.Bundle
 import android.view.LayoutInflater
