@@ -29,7 +29,6 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnLogout.setOnClickListener {
             binding.btnLogout.setOnClickListener {
                 Firebase.auth.signOut()
                 val intent = Intent(requireContext(), AuthActivity::class.java)
@@ -41,7 +40,6 @@ class ProfileFragment : Fragment() {
                 GoogleSignIn.getClient(requireContext(),gso).signOut()
                 startActivity(intent)
             }
-        }
 
 
     }
