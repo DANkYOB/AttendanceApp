@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_login_bg">
+    android:background="#E6F9FF">
 
     <TextView
         android:id="@+id/textView"
@@ -34,37 +34,28 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_group_47"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_upload_photo"
+        android:layout_width="28dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_frame_37__1_"
+        app:fabSize="mini"
         app:layout_constraintBottom_toBottomOf="@+id/profile_pic"
         app:layout_constraintEnd_toEndOf="@+id/profile_pic"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/profile_pic" />
-
-    <ImageView
-        android:id="@+id/chan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/ic_profile_frame"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_pic"
-        android:layout_marginTop="40dp"
-        style="@style/ClickableView"/>
+        app:layout_constraintStart_toEndOf="@+id/profile_pic" />
 
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name"
-        android:fontFamily="@font/poppins_medium"
-        android:layout_marginTop="23dp"
         android:layout_marginLeft="25dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Name"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chan" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_name"
@@ -148,31 +139,25 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <ImageView
+    <Button
         android:id="@+id/update_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_frame_37__1_"
-        android:layout_marginTop="32dp"
+        android:layout_width="150dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="24dp"
+        android:text="Update"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_roll_no" />
 
-    <ImageView
-        android:id="@+id/logout"
-        style="@style/ClickableView"
+    <Button
+        android:id="@+id/btn_logout"
+        android:text="Logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/ic_logout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/update_profile" />
-
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

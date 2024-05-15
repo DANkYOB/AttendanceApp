@@ -29,8 +29,8 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.updateProfile.setOnClickListener {
-            binding.updateProfile.setOnClickListener {
+        binding.btnLogout.setOnClickListener {
+            binding.btnLogout.setOnClickListener {
                 Firebase.auth.signOut()
                 val intent = Intent(requireContext(), AuthActivity::class.java)
                 val gso = GoogleSignInOptions
