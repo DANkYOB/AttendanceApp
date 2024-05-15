@@ -10,7 +10,7 @@
         android:id="@+id/textView"
         android:layout_width="53dp"
         android:layout_height="20dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="50dp"
         android:layout_marginLeft="161dp"
         android:layout_marginRight="161dp"
         android:fontFamily="@font/poppins_bold"

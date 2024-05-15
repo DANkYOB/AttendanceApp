@@ -58,6 +58,7 @@ class LoginFragment : Fragment() {
 
 
         // Google Auth
+
         val gso = GoogleSignInOptions
             .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -90,8 +91,10 @@ class LoginFragment : Fragment() {
             findNavController().navigate(R.id.forgotPasswordFragment)
         }
 
-        ///////
+        //
 
+
+        //email password login
 
         binding.btnLogin.setOnClickListener {
 
@@ -143,7 +146,12 @@ class LoginFragment : Fragment() {
 
         }
 
+        /////
+
+
     }
+
+
 
     private fun updateUI() {
 
