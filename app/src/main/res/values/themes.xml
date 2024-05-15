@@ -3,6 +3,7 @@
     <style name="Base.Theme.NelsonFinalYearProject" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowBackground">#E6F9FF</item>
     </style>
     <style name="customRoundedImageView" parent="">
         <item name="cornerFamily">rounded</item>
