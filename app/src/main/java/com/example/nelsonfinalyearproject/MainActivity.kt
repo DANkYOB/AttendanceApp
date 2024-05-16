@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
                 navController.navigate(R.id.homeFragment)
             }
             if (it.itemId == R.id.action_profile) {
-                navController.navigate(R.id.profileFragment)
+                navController.navigate(R.id.profileMenuFragment)
             }
 
 

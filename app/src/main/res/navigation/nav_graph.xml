@@ -11,9 +11,20 @@
         <action
             android:id="@+id/action_homeFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileMenuFragment"
+            app:destination="@id/profileMenuFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.nelsonfinalyearproject.profile.ProfileFragment"
         android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/profileMenuFragment"
+        android:name="com.example.nelsonfinalyearproject.profile.ProfileMenuFragment"
+        android:label="ProfileMenuFragment" >
+        <action
+            android:id="@+id/action_profileMenuFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
 </navigation>

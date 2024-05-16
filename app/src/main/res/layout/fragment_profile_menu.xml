@@ -3,15 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/ic_login_bg">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
         android:layout_marginLeft="161dp"
+        android:layout_marginTop="32dp"
         android:layout_marginRight="161dp"
         android:fontFamily="@font/poppins_bold"
         android:gravity="top"
@@ -70,132 +69,79 @@
 
     <ImageView
         android:id="@+id/edit_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_frame_35"
+        style="@style/ClickableView"
+        android:layout_width="264dp"
+        android:layout_height="37dp"
         android:layout_marginTop="8dp"
+        android:src="@drawable/ic_frame_35"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_roll_no"
-        style="@style/ClickableView"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_roll_no" />
 
     <ImageView
         android:id="@+id/action_my_profile"
         style="@style/ClickableView"
-        android:layout_width="433dp"
-        android:layout_height="36dp"
+        android:layout_width="375dp"
+        android:layout_height="28dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="25dp"
         android:src="@drawable/ic_group_12"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_profile"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.001" />
 
     <ImageView
         android:id="@+id/action_setting1"
         style="@style/ClickableView"
-        android:layout_width="433dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="468dp"
+        android:layout_width="375dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="416dp"
         android:src="@drawable/ic_group_13"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/action_notifications"
         style="@style/ClickableView"
-        android:layout_width="433dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="528dp"
+        android:layout_width="375dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="464dp"
         android:src="@drawable/ic_group_14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/action_about"
         style="@style/ClickableView"
-        android:layout_width="433dp"
-        android:layout_height="36dp"
+        android:layout_width="375dp"
+        android:layout_height="28dp"
 
-        android:layout_marginTop="584dp"
+        android:layout_marginTop="516dp"
         android:src="@drawable/ic_group_48"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/action_contact_us"
-        style="@style/ClickableView"
-        android:layout_width="433dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="644dp"
-        android:src="@drawable/ic_group_49"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/action_logout"
         style="@style/ClickableView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="88dp"
         android:src="@drawable/ic_logout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/action_contact_us"
-        app:layout_constraintVertical_bias="0.172" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        style="@style/ClickableView"
-        android:layout_width="102dp"
-        android:layout_height="76dp"
-        android:layout_marginBottom="66dp"
-        android:src="@drawable/ic_scan"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:layout_width="520dp"
-        android:layout_height="113dp"
-        android:layout_marginTop="900dp"
-        android:src="@drawable/ic_rectangle_3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:layout_width="39dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginBottom="34dp"
-        android:src="@drawable/ic_home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="45.75dp"
-        android:layout_marginBottom="26dp"
-        android:src="@drawable/ic_profile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
