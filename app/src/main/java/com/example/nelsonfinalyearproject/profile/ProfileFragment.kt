@@ -13,6 +13,7 @@ import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.nelsonfinalyearproject.Auth.AuthActivity
 import com.example.nelsonfinalyearproject.MainActivity
 import com.example.nelsonfinalyearproject.R
@@ -23,11 +24,12 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
 import com.google.firebase.storage.storage
+import com.google.firebase.storage.storageMetadata
 import com.yalantis.ucrop.UCrop
 import java.io.File
 
 class ProfileFragment : Fragment() {
-    private lateinit var binding: FragmentProfileBinding
+    private lateinit var binding: com.example.nelsonfinalyearproject.databinding.FragmentProfileBinding
 
 
     private val pickMedia = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
@@ -65,7 +67,7 @@ class ProfileFragment : Fragment() {
         }
 
 
-        binding.btnLogout.setOnClickListener {
+
             binding.btnLogout.setOnClickListener {
                 Firebase.auth.signOut()
                 val intent = Intent(requireContext(), AuthActivity::class.java)
@@ -77,7 +79,7 @@ class ProfileFragment : Fragment() {
                 GoogleSignIn.getClient(requireContext(),gso).signOut()
                 startActivity(intent)
             }
-        }
+
 
     }
 
@@ -106,14 +108,15 @@ class ProfileFragment : Fragment() {
         }.addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 FirebaseUserUtil.updateUser( photo = task.result){
+                    Glide.with(binding.ivProfile).load(task.result).diskCacheStrategy(
+                        DiskCacheStrategy.NONE)
+                        .skipMemoryCache(true).into(binding.ivProfile)
                     Toast.makeText(requireContext(), "Photo uploaded successfully", Toast.LENGTH_SHORT).show()
                 }
-
             } else {
 
             }
         }
-
 
     }
 

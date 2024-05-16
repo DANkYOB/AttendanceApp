@@ -21,7 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <ProgressBar
         android:id="@+id/progress_bar"
         android:visibility="gone"
@@ -46,11 +45,11 @@
 
     <ImageView
         android:id="@+id/btn_upload_photo"
+        style="@style/ClickableView"
         android:layout_width="28dp"
         android:layout_height="58dp"
         android:layout_marginBottom="4dp"
         android:src="@drawable/ic_group_47"
-        app:fabSize="mini"
         app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
         app:layout_constraintEnd_toEndOf="@+id/iv_profile"
         app:layout_constraintHorizontal_bias="0.75"
@@ -149,25 +148,29 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <ImageView
         android:id="@+id/update_profile"
+        style="@style/ClickableView"
         android:layout_width="150dp"
         android:layout_height="41dp"
-        android:layout_marginTop="24dp"
-        android:text="Update"
+        android:layout_marginTop="64dp"
+        android:src="@drawable/ic_frame_37__1_"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_roll_no" />
 
-    <Button
+    <ImageView
         android:id="@+id/btn_logout"
-        android:text="Logout"
+        style="@style/ClickableView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/ic_logout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/update_profile" />
+        app:layout_constraintTop_toBottomOf="@+id/update_profile"
+        app:layout_constraintVertical_bias="0.391" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
