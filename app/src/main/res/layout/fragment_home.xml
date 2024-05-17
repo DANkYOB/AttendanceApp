@@ -29,6 +29,8 @@
         app:layout_constraintStart_toEndOf="@+id/profile_pic"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
     <TextView
         android:id="@+id/tv_student_dept"
         android:layout_width="wrap_content"
@@ -51,15 +53,163 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_student_name" />
 
-    <ImageView
-        android:id="@+id/logout"
-        style="@style/ClickableView"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_logout"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_student_dept"
+        tools:listitem="@layout/item_date_time" />
+
+    <TextView
+        android:id="@+id/tv_today_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="25dp"
+        android:text="Today Class"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+    <ImageView
+        android:id="@+id/iv_card_view_today_class_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_rectangle_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_today_class" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Composite Material"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/iv_card_view_today_class_1"
+        app:layout_constraintTop_toTopOf="@+id/iv_card_view_today_class_1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:hint="9:30-10:30 AM"
+        android:textSize="13sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_card_view_today_class_1"
+        app:layout_constraintStart_toStartOf="@+id/iv_card_view_today_class_1" />
+
+    <ImageView
+        android:id="@+id/iv_card_view_today_class_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/ic_rectangle_1"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_card_view_today_class_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_card_view_today_class_1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_medium"
+        android:hint="Data Structure &amp; \nAlgorithm"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/iv_card_view_today_class_2"
+        app:layout_constraintTop_toTopOf="@+id/iv_card_view_today_class_2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:hint="11:30-12:30 PM"
+        android:textSize="13sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_card_view_today_class_2"
+        app:layout_constraintStart_toStartOf="@+id/iv_card_view_today_class_2" />
+
+
+    <ImageView
+        android:id="@+id/iv_card_view_today_class_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_rectangle_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_card_view_today_class_1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Image Processing"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/iv_card_view_today_class_3"
+        app:layout_constraintTop_toTopOf="@+id/iv_card_view_today_class_3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:hint="2:30-3:30 PM"
+        android:textSize="13sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_card_view_today_class_3"
+        app:layout_constraintStart_toStartOf="@+id/iv_card_view_today_class_3" />
+
+
+    <ImageView
+        android:id="@+id/iv_card_view_today_class_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/ic_rectangle_1"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_card_view_today_class_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_card_view_today_class_3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Data Science"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/iv_card_view_today_class_4"
+        app:layout_constraintTop_toTopOf="@+id/iv_card_view_today_class_4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:hint="4:30-5:30 PM"
+        android:textSize="13sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_card_view_today_class_4"
+        app:layout_constraintStart_toStartOf="@+id/iv_card_view_today_class_4" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
