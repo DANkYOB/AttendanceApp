@@ -1,12 +1,24 @@
 package com.example.nelsonfinalyearproject.util
 
 import android.net.Uri
+import com.example.nelsonfinalyearproject.profile.UserModel
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.tasks.await
 
 object FirebaseUserUtil {
+
+    suspend fun getFirebaseUserData(): UserModel? {
+        val user = Firebase.auth.currentUser ?: return null
+        return Firebase.firestore
+            .collection("users")
+            .document(user.uid)
+            .get()
+            .await()
+            ?.toObject(UserModel::class.java)
+    }
 
     fun updateUser(name: String? = null, photo: Uri? = null, cb: (Boolean) -> Unit) {
         val user = Firebase.auth.currentUser ?: return

@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.nelsonfinalyearproject.Auth.AuthActivity
@@ -26,24 +27,28 @@ import com.google.firebase.auth.auth
 import com.google.firebase.storage.storage
 import com.google.firebase.storage.storageMetadata
 import com.yalantis.ucrop.UCrop
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.io.File
 
 class ProfileFragment : Fragment() {
     private lateinit var binding: com.example.nelsonfinalyearproject.databinding.FragmentProfileBinding
 
 
-    private val pickMedia = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
-        if (uri != null) {
+    private val pickMedia =
+        registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
+            if (uri != null) {
 
-            val file = File(requireContext().cacheDir, "temp.png")
+                val file = File(requireContext().cacheDir, "temp.png")
 
-            UCrop.of(uri, Uri.fromFile(file))
-                .withAspectRatio(1f, 1f)
-                .start(requireActivity(), this);
-        } else {
-            Log.e("PhotoPicker", "No media selected")
+                UCrop.of(uri, Uri.fromFile(file))
+                    .withAspectRatio(1f, 1f)
+                    .start(requireActivity(), this);
+            } else {
+                Log.e("PhotoPicker", "No media selected")
+            }
         }
-    }
 
 
     override fun onCreateView(
@@ -68,35 +73,46 @@ class ProfileFragment : Fragment() {
 
 
 
-            binding.btnLogout.setOnClickListener {
-                Firebase.auth.signOut()
-                val intent = Intent(requireContext(), AuthActivity::class.java)
-                val gso = GoogleSignInOptions
-                    .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                    .requestIdToken(getString(R.string.default_web_client_id))
-                    .requestEmail()
-                    .build()
-                GoogleSignIn.getClient(requireContext(),gso).signOut()
-                startActivity(intent)
-            }
+        binding.btnLogout.setOnClickListener {
+            Firebase.auth.signOut()
+            val intent = Intent(requireContext(), AuthActivity::class.java)
+            val gso = GoogleSignInOptions
+                .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build()
+            GoogleSignIn.getClient(requireContext(), gso).signOut()
+            startActivity(intent)
+        }
 
 
     }
 
     private fun initViews() {
-        Firebase.auth.currentUser?.let {user ->
-            Glide.with(binding.ivProfile).load(user.photoUrl).error(R.drawable.ic_profile_icon).into(binding.ivProfile)
+        Firebase.auth.currentUser?.let { user ->
+            Glide.with(binding.ivProfile).load(user.photoUrl).error(R.drawable.ic_profile_icon)
+                .into(binding.ivProfile)
             binding.inputName.editText?.setText(user.displayName)
 
         }
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            FirebaseUserUtil.getFirebaseUserData()?.let { user ->
+                withContext(Dispatchers.Main) {
+                    Glide.with(binding.ivProfile).load(user.photo).into(binding.ivProfile)
+                }
+            }
+        }
+
     }
 
 
-    private fun uploadPhoto(uri: Uri){
-        val ref = Firebase.storage.getReference("images").child("${Firebase.auth.currentUser?.uid}.png")
+    private fun uploadPhoto(uri: Uri) {
+        val ref =
+            Firebase.storage.getReference("images").child("${Firebase.auth.currentUser?.uid}.png")
         binding.progressBar.visibility = View.VISIBLE
         val uploadTask = ref.putFile(uri)
-        uploadTask.addOnCompleteListener{
+        uploadTask.addOnCompleteListener {
             binding.progressBar.visibility = View.GONE
         }.continueWithTask { task ->
             if (!task.isSuccessful) {
@@ -107,14 +123,18 @@ class ProfileFragment : Fragment() {
             ref.downloadUrl
         }.addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                FirebaseUserUtil.updateUser( photo = task.result){
+                FirebaseUserUtil.updateUser(photo = task.result) {
                     Glide.with(binding.ivProfile).load(task.result).diskCacheStrategy(
-                        DiskCacheStrategy.NONE)
-                        .skipMemoryCache(true).into(binding.ivProfile)
-                    Toast.makeText(requireContext(), "Photo uploaded successfully", Toast.LENGTH_SHORT).show()
+                        DiskCacheStrategy.NONE
+                    ).skipMemoryCache(true).into(binding.ivProfile)
+                    Toast.makeText(
+                        requireContext(),
+                        "Photo uploaded successfully",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             } else {
-
+                Log.e("TAG", "Error", task.exception)
             }
         }
 
@@ -122,7 +142,7 @@ class ProfileFragment : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (data == null){
+        if (data == null) {
             return
         }
 
@@ -133,10 +153,10 @@ class ProfileFragment : Fragment() {
 
         } else if (resultCode == UCrop.RESULT_ERROR) {
             val cropError = UCrop.getError(data);
-            Toast.makeText(requireContext(), cropError?.message.toString(), Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), cropError?.message.toString(), Toast.LENGTH_SHORT)
+                .show()
         }
     }
-
 
 
 }

@@ -21,10 +21,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_marginTop="27dp"
         android:id="@+id/profile_pic"
         android:layout_width="96dp"
         android:layout_height="96dp"
+        android:layout_marginTop="27dp"
         android:src="@drawable/ic_profile_pic"
         app:civ_border_color="#FFFFFF"
         app:civ_border_width="2dp"
@@ -36,10 +36,10 @@
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
         android:fontFamily="@font/poppins_bold"
         android:text="Purab Jyoti Kashyap"
         android:textSize="16sp"
-        android:layout_marginTop="27dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
@@ -48,20 +48,21 @@
         android:id="@+id/tv_department"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
         android:fontFamily="@font/poppins_medium"
         android:text="Information Technology"
-        android:layout_marginTop="3dp"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
     <TextView
         android:id="@+id/tv_roll_no"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
         android:fontFamily="@font/poppins_medium"
         android:text="220102013"
-        android:layout_marginTop="1dp"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,15 +79,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_roll_no" />
 
-    <ImageView
+    <TextView
         android:id="@+id/action_my_profile"
-        style="@style/ClickableView"
-        android:layout_width="375dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="25dp"
+        style="@style/ClickableViewBorderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_marginRight="25dp"
-        android:src="@drawable/ic_group_12"
+        android:paddingVertical="12dp"
+        android:text="My Profile"
+        app:drawableStartCompat="@drawable/ic_chevron_right"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.528"
@@ -96,7 +97,7 @@
 
     <ImageView
         android:id="@+id/action_setting1"
-        style="@style/ClickableView"
+        style="@style/ClickableViewBorderless"
         android:layout_width="375dp"
         android:layout_height="28dp"
         android:layout_marginTop="416dp"
@@ -108,7 +109,7 @@
 
     <ImageView
         android:id="@+id/action_notifications"
-        style="@style/ClickableView"
+        style="@style/ClickableViewBorderless"
         android:layout_width="375dp"
         android:layout_height="28dp"
         android:layout_marginTop="464dp"
@@ -120,7 +121,7 @@
 
     <ImageView
         android:id="@+id/action_about"
-        style="@style/ClickableView"
+        style="@style/ClickableViewBorderless"
         android:layout_width="375dp"
         android:layout_height="28dp"
 

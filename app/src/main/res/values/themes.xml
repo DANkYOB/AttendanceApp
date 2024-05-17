@@ -38,6 +38,12 @@
         <item name="android:background">?attr/actionBarItemBackground</item>
     </style>
 
+    <style name="ClickableViewBorderless">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
     <style name="verification">
         <item name="android:textSize">12sp</item>
         <item name="android:letterSpacing">0.02</item>
