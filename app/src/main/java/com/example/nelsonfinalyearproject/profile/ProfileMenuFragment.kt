@@ -46,6 +46,10 @@ class ProfileMenuFragment: Fragment() {
             findNavController().navigate(R.id.profileFragment)
         }
 
+        binding.actionSetting1.setOnClickListener {
+            findNavController().navigate(R.id.settingsFragment)
+        }
+
 
     }
 

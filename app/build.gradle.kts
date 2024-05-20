@@ -2,6 +2,9 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("com.google.gms.google-services")
+    id("kotlin-kapt")
+    id("kotlin-parcelize")
+    id("androidx.navigation.safeargs.kotlin")
 
 }
 
@@ -55,17 +58,28 @@ dependencies {
 
     implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
     implementation("com.google.firebase:firebase-analytics")
-    implementation ("de.hdodenhof:circleimageview:3.1.0")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
-    implementation("com.google.android.gms:play-services-auth:21.1.1")
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.firebase:firebase-storage")
+
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+
+    implementation("com.google.android.gms:play-services-auth:21.1.1")
+
     implementation("com.github.bumptech.glide:glide:4.16.0")
+
     implementation("com.google.code.gson:gson:2.10.1")
+
     implementation ("com.github.yalantis:ucrop:2.2.9")
-    implementation("com.github.bumptech.glide:glide:4.16.0")
+
+    implementation("com.google.android.material:material:1.11.0")
+    implementation("com.tbuonomo:dotsindicator:5.0")
+
+    implementation("androidx.room:room-runtime:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
 
 
 }

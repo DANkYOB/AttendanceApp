@@ -34,6 +34,31 @@
         tools:layout_editor_absoluteX="136dp" />
 
     <TextView
+        android:id="@+id/tv_update_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="Update Today's Class"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="42dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_back" />
+
+    <ImageView
+        android:id="@+id/btn_update_today_class"
+        style="@style/ClickableView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:layout_marginEnd="25dp"
+        android:src="@drawable/ic_chevron_right"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_update_class"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
         android:id="@+id/tv_course_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,7 +69,7 @@
         android:layout_marginTop="42dp"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_back"
+        app:layout_constraintTop_toBottomOf="@+id/tv_update_class"
         tools:ignore="HardcodedText" />
 
     <ImageView

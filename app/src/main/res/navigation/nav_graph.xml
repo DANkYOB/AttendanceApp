@@ -7,24 +7,59 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.nelsonfinalyearproject.Home.HomeFragment"
-        android:label="HomeFragment" >
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
         <action
             android:id="@+id/action_homeFragment_to_profileMenuFragment"
             app:destination="@id/profileMenuFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_updateClassFragment"
+            app:destination="@id/updateClassFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_updateClassListFragment"
+            app:destination="@id/updateClassListFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.nelsonfinalyearproject.profile.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
     <fragment
         android:id="@+id/profileMenuFragment"
         android:name="com.example.nelsonfinalyearproject.profile.ProfileMenuFragment"
-        android:label="ProfileMenuFragment" >
+        android:label="ProfileMenuFragment"
+        tools:layout="@layout/fragment_profile_menu">
         <action
             android:id="@+id/action_profileMenuFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_profileMenuFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.nelsonfinalyearproject.Settings.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_passwordChangeFragment"
+            app:destination="@id/passwordChangeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateClassFragment"
+        android:name="com.example.nelsonfinalyearproject.Settings.UpdateClassFragment"
+        android:label="UpdateClassFragment"
+        tools:layout="@layout/fragment_update_class"/>
+    <fragment
+        android:id="@+id/passwordChangeFragment"
+        android:name="com.example.nelsonfinalyearproject.Settings.PasswordChangeFragment"
+        android:label="PasswordChangeFragment"
+        tools:layout="@layout/fragment_password_change"/>
+    <fragment
+        android:id="@+id/updateClassListFragment"
+        android:name="com.example.nelsonfinalyearproject.Settings.UpdateClassListFragment"
+        android:label="UpdateClassListFragment" />
 </navigation>

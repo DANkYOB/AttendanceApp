@@ -39,21 +39,6 @@ object FirebaseUserUtil {
             .addOnCompleteListener {
                 cb(it.isSuccessful)
             }
-//        Firebase.auth.currentUser?.updateProfile(
-//            userProfileChangeRequest {
-//                if (!name.isNullOrEmpty()) {
-//                    displayName = name
-//                }
-//                if (photo != null) {
-//                    photoUri = photo
-//                }
-//            }
-//        )?.addOnCompleteListener {
-//            cb(it.isSuccessful)
-//
-//            Firebase.firestore.collection("users")
-//
-//        }
     }
 
 

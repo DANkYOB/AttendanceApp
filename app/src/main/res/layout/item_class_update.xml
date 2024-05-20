@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/iv_cl_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/ClickableView">
+
+        <TextView
+            android:id="@+id/tv_subject"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:adjustViewBounds="true"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Image Processing Class"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_subject_update_reason"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginTop="1dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_medium"
+            android:maxLines="3"
+            android:text="Today's class will be at 4:30 PM"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tv_subject"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_subject" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Few minutes ago"
+            android:textSize="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_subject_update_reason" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
