@@ -79,17 +79,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 
-
     <TextView
-        android:id="@+id/tv_view_all_today_class"
+        android:id="@+id/tv_view_all_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
-        style="@style/ClickableViewBorderless"
-        android:text="View All"
-        android:textSize="15sp"
-        android:layout_marginEnd="25dp"
+        style="@style/ClickableView"
         android:textColor="#1DA1FA"
+        android:text="View All"
+        android:layout_marginEnd="25dp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_today_class"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_today_class" />
@@ -149,7 +148,7 @@
         app:layout_constraintTop_toTopOf="@+id/iv_card_view_today_class_2" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -171,7 +170,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_card_view_today_class_1" />
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -184,14 +182,13 @@
         app:layout_constraintTop_toTopOf="@+id/iv_card_view_today_class_3" />
 
     <TextView
-        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="20dp"
         android:fontFamily="@font/poppins_medium"
         android:hint="2:30-3:30 PM"
         android:textSize="13sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_card_view_today_class_3"
         app:layout_constraintStart_toStartOf="@+id/iv_card_view_today_class_3" />
 
@@ -207,87 +204,63 @@
         app:layout_constraintTop_toTopOf="@+id/iv_card_view_today_class_3" />
 
     <TextView
-        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins_medium"
         android:hint="Data Science"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppins_medium"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="@+id/iv_card_view_today_class_4"
         app:layout_constraintTop_toTopOf="@+id/iv_card_view_today_class_4" />
 
     <TextView
-        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="20dp"
         android:fontFamily="@font/poppins_medium"
         android:hint="4:30-5:30 PM"
         android:textSize="13sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_card_view_today_class_4"
         app:layout_constraintStart_toStartOf="@+id/iv_card_view_today_class_4" />
 
-
     <TextView
-        android:id="@+id/tv_class_updated"
+        android:id="@+id/tv_class_updates"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
-        android:text="Class Updated"
         android:textSize="15sp"
         android:layout_marginTop="30dp"
         android:layout_marginStart="25dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_card_view_today_class_3" />
-
-
-    <TextView
-        android:id="@+id/tv_add_update"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add an Update"
-        android:layout_marginStart="34dp"
-        android:fontFamily="@font/poppins_bold"
-        android:textSize="15sp"
-        android:textColor="#f47373"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_class_updated"
-        app:layout_constraintStart_toEndOf="@+id/tv_class_updated"
-        app:layout_constraintTop_toTopOf="@+id/tv_class_updated" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_card_view_today_class_3"
+        tools:text="Student name" />
 
     <TextView
-        android:id="@+id/tv_view_all_class_update"
+        android:id="@+id/tv_view_all_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
-        style="@style/ClickableViewBorderless"
+        style="@style/ClickableView"
         android:text="View All"
-        android:textSize="15sp"
-        android:layout_marginEnd="25dp"
         android:textColor="#1DA1FA"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_class_updated"
+        android:layout_marginEnd="25dp"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_class_updates"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_class_updated" />
+        app:layout_constraintTop_toTopOf="@+id/tv_class_updates" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView_class_update"
+    <ImageView
+        android:id="@+id/iv_card_view_class_update_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="30dp"
-        android:paddingStart="25dp"
-        android:paddingEnd="20dp"
-        android:paddingBottom="20dp"
+        android:background="@drawable/ic_rectangle_1"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintTop_toBottomOf="@+id/tv_class_updated"
-        tools:listitem="@layout/item_class_update" />
-
-
-
+        app:layout_constraintTop_toBottomOf="@+id/tv_class_updates" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

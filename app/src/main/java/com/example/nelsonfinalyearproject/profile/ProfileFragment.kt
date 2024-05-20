@@ -72,6 +72,19 @@ class ProfileFragment : Fragment() {
         }
 
 
+        binding.updateProfile.setOnClickListener{
+
+            val name = binding.inputName.editText?.toString()?.trim()
+            if (!name.isNullOrEmpty()){
+                FirebaseUserUtil.updateUser(name){
+                    (requireActivity() as MainActivity).updateUser()
+                    Toast.makeText(requireContext(), "Profile updated", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+        }
+
+
 
         binding.btnLogout.setOnClickListener {
             Firebase.auth.signOut()

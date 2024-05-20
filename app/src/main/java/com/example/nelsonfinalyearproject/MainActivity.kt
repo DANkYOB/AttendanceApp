@@ -12,12 +12,18 @@ import android.view.MenuItem
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.nelsonfinalyearproject.databinding.ActivityMainBinding
+import com.example.nelsonfinalyearproject.profile.UserModel
+import com.example.nelsonfinalyearproject.util.SharedPref
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
+    private val sharedPref by lazy { SharedPref(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +47,19 @@ class MainActivity : AppCompatActivity() {
 
 
             return@setOnItemSelectedListener true
+        }
+    }
+
+    fun updateUser() {
+        fun updateUser() {
+            val user = Firebase.auth.currentUser ?: return
+            Firebase.firestore.collection("users").document(user.uid).get().addOnCompleteListener {
+                if (it.isSuccessful) {
+                    it.result.toObject(UserModel::class.java)?.let {
+                        sharedPref.setUser(it)
+                    }
+                }
+            }
         }
     }
 }

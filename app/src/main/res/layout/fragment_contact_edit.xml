@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,15 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/ic_chevron_left"
+        android:fontFamily="@font/poppins_bold"
         android:text="Contact Details"
         android:textAlignment="center"
-        android:fontFamily="@font/poppins_bold"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="44dp"
         android:layout_marginRight="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/tv_phone_number"
@@ -31,6 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_contact_details" />
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_new_password"
@@ -50,7 +52,6 @@
             android:maxLength="20" />
 
     </com.google.android.material.textfield.TextInputLayout>
-
 
 
     <TextView
@@ -88,15 +89,6 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    <Button
-        android:id="@+id/btn_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Edit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_university_mail" />
 
     <Button
 
@@ -106,7 +98,9 @@
         android:text="Save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_edit" />
+        app:layout_constraintTop_toBottomOf="@+id/input_university_mail" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
