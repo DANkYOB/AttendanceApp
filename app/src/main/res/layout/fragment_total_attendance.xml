@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -39,21 +40,149 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="31dp"
         android:layout_marginStart="37dp"
-
         android:fontFamily="@font/poppins_medium"
         android:text="Total Class"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <ProgressBar
+        android:id="@+id/progressbar_one"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:layout_height="wrap_content"
+        android:layout_width="325dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        android:progress="25"
+        android:progressDrawable="@drawable/custom_progress_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/subject_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data Structure &amp; Algorithm"
+        android:textSize="13sp"
+        android:fontFamily="@font/poppins_regular"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/progressbar_one"
+        app:layout_constraintTop_toTopOf="@+id/progressbar_one" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Total Class"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="37dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressbar_one" />
+
+    <ProgressBar
+        android:id="@+id/progressbar_two"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="325dp"
+        android:layout_height="40dp"
+        android:progress="70"
+        android:progressDrawable="@drawable/custom_progress_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/subject_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Composite Material"
+        android:textAlignment="center"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressbar_two"
+        app:layout_constraintTop_toTopOf="@+id/progressbar_two" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Total Class"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="37dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressbar_two" />
+
+    <ProgressBar
+        android:id="@+id/progressbar_three"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="325dp"
+        android:layout_height="40dp"
+        android:progress="20"
+        android:progressDrawable="@drawable/custom_progress_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/subject_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Data Science"
+        android:textAlignment="center"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressbar_three"
+        app:layout_constraintTop_toTopOf="@+id/progressbar_three" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Total Class"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="37dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressbar_three" />
+
+    <ProgressBar
+        android:id="@+id/progressbar_four"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="325dp"
+        android:layout_height="40dp"
+        android:progress="42"
+        android:progressDrawable="@drawable/custom_progress_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/subject_four"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Image Processing"
+        android:textAlignment="center"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressbar_four"
+        app:layout_constraintTop_toTopOf="@+id/progressbar_four" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
