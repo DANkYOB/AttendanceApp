@@ -43,7 +43,7 @@ class ProfileMenuFragment: Fragment() {
 
 
         binding.actionMyProfile.setOnClickListener {
-            findNavController().navigate(R.id.profileFragment)
+            findNavController().navigate(R.id.myProfileFragment)
         }
 
         binding.actionSetting1.setOnClickListener {
