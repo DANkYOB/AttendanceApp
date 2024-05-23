@@ -33,11 +33,11 @@
         android:label="ProfileMenuFragment"
         tools:layout="@layout/fragment_profile_menu">
         <action
-            android:id="@+id/action_profileMenuFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-        <action
             android:id="@+id/action_profileMenuFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_profileMenuFragment_to_myProfileFragment"
+            app:destination="@id/myProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -62,4 +62,16 @@
         android:id="@+id/updateClassListFragment"
         android:name="com.example.nelsonfinalyearproject.Settings.UpdateClassListFragment"
         android:label="UpdateClassListFragment" />
+    <fragment
+        android:id="@+id/myProfileFragment"
+        android:name="com.example.nelsonfinalyearproject.profile.MyProfileFragment"
+        android:label="MyProfileFragment" >
+        <action
+            android:id="@+id/action_myProfileFragment_to_totalAttendanceFragment"
+            app:destination="@id/totalAttendanceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/totalAttendanceFragment"
+        android:name="com.example.nelsonfinalyearproject.profile.TotalAttendanceFragment"
+        android:label="TotalAttendanceFragment" />
 </navigation>
