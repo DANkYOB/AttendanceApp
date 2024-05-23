@@ -63,6 +63,7 @@ dependencies {
     implementation("com.google.firebase:firebase-storage")
     implementation("com.google.firebase:firebase-database")
 
+
     implementation ("de.hdodenhof:circleimageview:3.1.0")
 
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
