@@ -65,5 +65,13 @@
     <fragment
         android:id="@+id/myProfileFragment"
         android:name="com.example.nelsonfinalyearproject.profile.MyProfileFragment"
-        android:label="MyProfileFragment" />
+        android:label="MyProfileFragment" >
+        <action
+            android:id="@+id/action_myProfileFragment_to_totalAttendanceFragment"
+            app:destination="@id/totalAttendanceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/totalAttendanceFragment"
+        android:name="com.example.nelsonfinalyearproject.profile.TotalAttendanceFragment"
+        android:label="TotalAttendanceFragment" />
 </navigation>
