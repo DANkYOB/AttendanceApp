@@ -74,7 +74,7 @@ class ProfileFragment : Fragment() {
 
         binding.updateProfile.setOnClickListener{
 
-            val name = binding.inputName.editText?.toString()?.trim()
+            val name = binding.inputName.editText?.text?.toString()?.trim()
             if (!name.isNullOrEmpty()){
                 FirebaseUserUtil.updateUser(name){
                     (requireActivity() as MainActivity).updateUser()
@@ -102,16 +102,10 @@ class ProfileFragment : Fragment() {
     }
 
     private fun initViews() {
-        Firebase.auth.currentUser?.let { user ->
-            Glide.with(binding.ivProfile).load(user.photoUrl).error(R.drawable.ic_profile_icon)
-                .into(binding.ivProfile)
-            binding.inputName.editText?.setText(user.displayName)
-
-        }
-
         viewLifecycleOwner.lifecycleScope.launch {
             FirebaseUserUtil.getFirebaseUserData()?.let { user ->
                 withContext(Dispatchers.Main) {
+                    binding.inputName.editText?.setText(user.name)
                     Glide.with(binding.ivProfile).load(user.photo).into(binding.ivProfile)
                 }
             }

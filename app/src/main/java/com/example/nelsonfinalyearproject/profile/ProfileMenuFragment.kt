@@ -2,6 +2,7 @@ package com.example.nelsonfinalyearproject.profile
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,22 +51,21 @@ class ProfileMenuFragment: Fragment() {
             findNavController().navigate(R.id.settingsFragment)
         }
 
+        binding.editProfile.setOnClickListener {
+            findNavController().navigate(R.id.profileFragment)
+        }
+
 
     }
 
 
 
     private fun initViews() {
-        Firebase.auth.currentUser?.let { user ->
-            Glide.with(binding.ivProfile).load(user.photoUrl).error(R.drawable.ic_profile_icon)
-                .into(binding.ivProfile)
-
-
-        }
-
         viewLifecycleOwner.lifecycleScope.launch {
             FirebaseUserUtil.getFirebaseUserData()?.let { user ->
+                Log.e("user", user.toString())
                 withContext(Dispatchers.Main) {
+                    binding.tvName.text = user.name
                     Glide.with(binding.ivProfile).load(user.photo).into(binding.ivProfile)
                 }
             }
