@@ -53,19 +53,6 @@
         app:layout_constraintTop_toTopOf="@+id/tv_student_name" />
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_student_dept"
-        tools:listitem="@layout/item_date_time" />
-
     <TextView
         android:id="@+id/tv_today_class"
         android:layout_width="wrap_content"
@@ -76,7 +63,21 @@
         android:text="Today Class"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        app:spanCount="2"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_today_class"
+        tools:listitem="@layout/item_today_class" />
 
     <TextView
         android:id="@+id/tv_view_all_today_class"
@@ -92,141 +93,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_today_class" />
 
-    <ImageView
-        android:id="@+id/iv_card_view_today_class_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/ic_rectangle_1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_today_class" />
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins_medium"
-        android:hint="Composite Material"
-        android:textSize="13sp"
-        app:layout_constraintStart_toStartOf="@+id/iv_card_view_today_class_1"
-        app:layout_constraintTop_toTopOf="@+id/iv_card_view_today_class_1" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/poppins_medium"
-        android:hint="9:30-10:30 AM"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_card_view_today_class_1"
-        app:layout_constraintStart_toStartOf="@+id/iv_card_view_today_class_1" />
-
-    <ImageView
-        android:id="@+id/iv_card_view_today_class_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
-        android:background="@drawable/ic_rectangle_1"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_card_view_today_class_1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/iv_card_view_today_class_1" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins_medium"
-        android:hint="Data Structure &amp; \nAlgorithm"
-        android:textSize="13sp"
-        app:layout_constraintStart_toStartOf="@+id/iv_card_view_today_class_2"
-        app:layout_constraintTop_toTopOf="@+id/iv_card_view_today_class_2" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/poppins_medium"
-        android:hint="11:30-12:30 PM"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_card_view_today_class_2"
-        app:layout_constraintStart_toStartOf="@+id/iv_card_view_today_class_2" />
-
-
-    <ImageView
-        android:id="@+id/iv_card_view_today_class_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/ic_rectangle_1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_card_view_today_class_1" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins_medium"
-        android:hint="Image Processing"
-        android:textSize="13sp"
-        app:layout_constraintStart_toStartOf="@+id/iv_card_view_today_class_3"
-        app:layout_constraintTop_toTopOf="@+id/iv_card_view_today_class_3" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/poppins_medium"
-        android:hint="2:30-3:30 PM"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_card_view_today_class_3"
-        app:layout_constraintStart_toStartOf="@+id/iv_card_view_today_class_3" />
-
-
-    <ImageView
-        android:id="@+id/iv_card_view_today_class_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
-        android:background="@drawable/ic_rectangle_1"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_card_view_today_class_3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/iv_card_view_today_class_3" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins_medium"
-        android:hint="Data Science"
-        android:textSize="13sp"
-        app:layout_constraintStart_toStartOf="@+id/iv_card_view_today_class_4"
-        app:layout_constraintTop_toTopOf="@+id/iv_card_view_today_class_4" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/poppins_medium"
-        android:hint="4:30-5:30 PM"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_card_view_today_class_4"
-        app:layout_constraintStart_toStartOf="@+id/iv_card_view_today_class_4" />
 
     <TextView
         android:id="@+id/tv_class_updated"
@@ -238,7 +105,7 @@
         android:text="Class Updated"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_card_view_today_class_3" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 
 
     <TextView
