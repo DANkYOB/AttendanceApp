@@ -27,7 +27,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
 import com.google.firebase.storage.storage
-import com.google.firebase.storage.storageMetadata
 import com.yalantis.ucrop.UCrop
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -117,7 +116,7 @@ class ProfileFragment : Fragment() {
                 withContext(Dispatchers.Main) {
                     binding.inputName.editText?.setText(user.name)
                     binding.inputDepartment.editText?.setText(user.dept)
-                    binding.inputRollNo.editText?.setText(user.rollNumber)
+                    binding.inputRollNo.editText?.setText(user.rollnumber)
                     Glide.with(binding.ivProfile).load(user.photo).into(binding.ivProfile)
                 }
             }
