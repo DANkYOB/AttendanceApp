@@ -74,14 +74,12 @@ class ProfileFragment : Fragment() {
         }
 
 
-
-
         binding.updateProfile.setOnClickListener{
 
             val dept = binding.inputDepartment.editText?.text?.toString()?.trim()
             val name = binding.inputName.editText?.text?.toString()?.trim()
             val rollNumber = binding.inputRollNo.editText?.text?.toString()?.trim()
-            if (!name.isNullOrEmpty()){
+            if (!name.isNullOrEmpty() || !dept.isNullOrEmpty() || !rollNumber.isNullOrEmpty() ){
                 FirebaseUserUtil.updateUser(name, dept, rollNumber){
                     (requireActivity() as MainActivity).updateUser()
                     Toast.makeText(requireContext(), "Profile updated", Toast.LENGTH_SHORT).show()

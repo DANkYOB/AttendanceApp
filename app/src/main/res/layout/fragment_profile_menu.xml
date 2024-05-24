@@ -68,12 +68,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_department" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/edit_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Edit Profile"
+        android:layout_width="92dp"
+        android:layout_height="41dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Edit Profile"
+        style="@style/ClickableView"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_roll_no" />

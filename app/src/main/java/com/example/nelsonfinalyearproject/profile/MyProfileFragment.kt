@@ -31,6 +31,10 @@ class MyProfileFragment: Fragment() {
             findNavController().navigate(R.id.totalAttendanceFragment)
         }
 
+        binding.btnBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
     }
 
 
