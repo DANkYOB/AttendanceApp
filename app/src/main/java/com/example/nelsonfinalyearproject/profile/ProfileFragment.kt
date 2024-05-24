@@ -74,7 +74,12 @@ class ProfileFragment : Fragment() {
         }
 
 
+
+
         binding.updateProfile.setOnClickListener{
+
+
+            val dept = binding.inputDepartment.editText?.text.toString()?.trim()
 
             val name = binding.inputName.editText?.text?.toString()?.trim()
             if (!name.isNullOrEmpty()){
