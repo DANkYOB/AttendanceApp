@@ -9,19 +9,24 @@ import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResultListener
 import androidx.lifecycle.coroutineScope
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.example.nelsonfinalyearproject.Adapters.TodayClassAdapter
 import com.example.nelsonfinalyearproject.Adapters.UpdateClassAdapter
 import com.example.nelsonfinalyearproject.R
 import com.example.nelsonfinalyearproject.databinding.FragmentHomeBinding
+import com.example.nelsonfinalyearproject.util.FirebaseUserUtil
 import com.example.nelsonfinalyearproject.util.Note
 import com.example.nelsonfinalyearproject.util.NoteSaver
 import com.example.nelsonfinalyearproject.util.UpdateClassAdapterListener
 import com.google.firebase.Firebase
 import com.google.firebase.database.database
 import com.google.firebase.firestore.firestore
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 import java.util.Calendar
 
 class HomeFragment : Fragment() {
@@ -49,6 +54,10 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        initViews()
+
+
 
         binding.tvViewAllClassUpdate.setOnClickListener {
             findNavController().navigate(R.id.updateClassListFragment)
@@ -158,5 +167,17 @@ class HomeFragment : Fragment() {
 //        val calendar = Calendar.getInstance()
 //        return calendar.get(Calendar.DAY_OF_WEEK) - 2
 //    }
+private fun initViews() {
+    viewLifecycleOwner.lifecycleScope.launch {
+        FirebaseUserUtil.getFirebaseUserData()?.let { user ->
+            Log.e("user", user.toString())
+            withContext(Dispatchers.Main) {
+                binding.tvStudentName.text = user.name
+                binding.tvStudentDept.text = user.dept
+                Glide.with(binding.profilePic).load(user.photo).into(binding.profilePic)
+            }
+        }
+    }
 
+}
 }

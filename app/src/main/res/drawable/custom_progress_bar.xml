@@ -19,12 +19,12 @@
                 <corners android:radius="7dp"/>
                 <solid android:color="#1DA1FA"/>
 
-
             </shape>
 
         </scale>
 
     </item>
+
 
 
 

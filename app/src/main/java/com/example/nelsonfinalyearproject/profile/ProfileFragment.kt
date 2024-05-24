@@ -78,12 +78,11 @@ class ProfileFragment : Fragment() {
 
         binding.updateProfile.setOnClickListener{
 
-
-            val dept = binding.inputDepartment.editText?.text.toString()?.trim()
-
+            val dept = binding.inputDepartment.editText?.text?.toString()?.trim()
             val name = binding.inputName.editText?.text?.toString()?.trim()
+            val rollNumber = binding.inputRollNo.editText?.text?.toString()?.trim()
             if (!name.isNullOrEmpty()){
-                FirebaseUserUtil.updateUser(name){
+                FirebaseUserUtil.updateUser(name, dept, rollNumber){
                     (requireActivity() as MainActivity).updateUser()
                     Toast.makeText(requireContext(), "Profile updated", Toast.LENGTH_SHORT).show()
                 }
@@ -119,6 +118,8 @@ class ProfileFragment : Fragment() {
             FirebaseUserUtil.getFirebaseUserData()?.let { user ->
                 withContext(Dispatchers.Main) {
                     binding.inputName.editText?.setText(user.name)
+                    binding.inputDepartment.editText?.setText(user.dept)
+                    binding.inputRollNo.editText?.setText(user.rollNumber)
                     Glide.with(binding.ivProfile).load(user.photo).into(binding.ivProfile)
                 }
             }

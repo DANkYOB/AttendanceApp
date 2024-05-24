@@ -74,6 +74,8 @@ class ProfileMenuFragment: Fragment() {
                 Log.e("user", user.toString())
                 withContext(Dispatchers.Main) {
                     binding.tvName.text = user.name
+                    binding.tvDepartment.text = user.dept
+                    binding.tvRollNo.text = user.rollNumber
                     Glide.with(binding.ivProfile).load(user.photo).into(binding.ivProfile)
                 }
             }

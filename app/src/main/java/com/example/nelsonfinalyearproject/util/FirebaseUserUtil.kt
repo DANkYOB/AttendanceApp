@@ -20,7 +20,7 @@ object FirebaseUserUtil {
             ?.toObject(UserModel::class.java)
     }
 
-    fun updateUser(name: String? = null, photo: Uri? = null, cb: (Boolean) -> Unit) {
+    fun updateUser(name: String? = null, dept: String? = null, rollNumber: String? = null, photo: Uri? = null, cb: (Boolean) -> Unit) {
         val user = Firebase.auth.currentUser ?: return
         Firebase.firestore
             .collection("users")
@@ -32,6 +32,12 @@ object FirebaseUserUtil {
                     }
                     if (photo != null) {
                         put("photo", photo.toString())
+                    }
+                    if (!dept.isNullOrEmpty()) {
+                        put("dept", dept)
+                    }
+                    if (!rollNumber.isNullOrEmpty()){
+                        put("rollnumber", rollNumber)
                     }
                 },
                 SetOptions.merge()

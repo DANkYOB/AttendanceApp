@@ -6,5 +6,5 @@ data class UserModel(
     val phone: String? = null,
     val mail: String? = null,
     val dept: String? = null,
-    val rollNumber: Int? = null
+    val rollNumber: String? = null,
 )
