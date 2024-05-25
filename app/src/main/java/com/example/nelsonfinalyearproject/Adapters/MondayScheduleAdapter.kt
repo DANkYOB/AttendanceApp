@@ -3,13 +3,13 @@ package com.example.nelsonfinalyearproject.Adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.nelsonfinalyearproject.databinding.ItemClassUpdateWithDeleteBinding
+import com.example.nelsonfinalyearproject.databinding.ItemTodayClassBinding
 import com.example.nelsonfinalyearproject.util.Note
 import com.example.nelsonfinalyearproject.util.UpdateClassAdapterListener
 
-class UpdateClassListAdapter(
+class MondayScheduleAdapter (
     private val listener: UpdateClassAdapterListener
-): RecyclerView.Adapter<ViewHolder2>() {
+): RecyclerView.Adapter<StudentViewHolder>() {
 
     private val notes = mutableListOf<Note>()
 
@@ -33,29 +33,34 @@ class UpdateClassListAdapter(
         notifyItemRemoved(pos)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder2 {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHolder {
+        //create the view
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = ItemClassUpdateWithDeleteBinding.inflate(layoutInflater, parent, false)
-        return ViewHolder2(binding)
+        val binding = ItemTodayClassBinding.inflate(layoutInflater, parent, false)
+        return StudentViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
+        //list count
         return notes.size
     }
 
-    override fun onBindViewHolder(holder: ViewHolder2, position: Int) {
+    override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
+        //data bind
         holder.binding.tvSubject.text = notes[position].title
-        holder.binding.tvSubjectUpdateReason.text = notes[position].body
+        holder.binding.tvClassTime.text = notes[position].body
 
         holder.binding.btnDelete.setOnClickListener {
             listener.onItemDelete(position, notes[position])
         }
     }
+
 }
 
-
-class ViewHolder2(
-    val binding: ItemClassUpdateWithDeleteBinding
+class StudentViewHolder(
+    val binding: ItemTodayClassBinding
 ): RecyclerView.ViewHolder(binding.root) {
+
+
 
 }

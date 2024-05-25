@@ -17,6 +17,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
     <TextView
         android:id="@+id/tv_student_name"
         android:layout_width="wrap_content"
@@ -60,24 +62,12 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="25dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="Today Class"
+        android:text="Class Schedule"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal"
-        app:spanCount="2"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_today_class"
-        tools:listitem="@layout/item_today_class" />
+
 
     <TextView
         android:id="@+id/tv_view_all_today_class"
@@ -93,9 +83,78 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_today_class" />
 
-
+    <TextView
+        android:id="@+id/tv_monday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_rectangle_1"
+        style="@style/ClickableViewBorderless"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="25dp"
+        android:text="Moday Class \nSchedule"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_today_class" />
 
     <TextView
+        android:id="@+id/tv_tuesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_rectangle_1"
+        android:gravity="center"
+        android:fontFamily="@font/poppins_bold"
+        style="@style/ClickableViewBorderless"
+        android:layout_marginEnd="25dp"
+        android:text="Tuesday Class \nSchedule"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_monday"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_monday" />
+
+    <TextView
+        android:id="@+id/tv_wednesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_rectangle_1"
+        android:fontFamily="@font/poppins_bold"
+        style="@style/ClickableViewBorderless"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="25dp"
+        android:text="Wednesday Class \nSchedule"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_monday" />
+
+    <TextView
+        android:id="@+id/tv_thursday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_rectangle_1"
+        android:fontFamily="@font/poppins_bold"
+        style="@style/ClickableViewBorderless"
+        android:gravity="center"
+        android:layout_marginEnd="25dp"
+        android:text="Thursday Class \nSchedule"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_wednesday"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_wednesday" />
+
+    <TextView
+        android:id="@+id/tv_friday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_rectangle_1"
+        android:fontFamily="@font/poppins_bold"
+        style="@style/ClickableViewBorderless"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="25dp"
+        android:text="Friday Class \nSchedule"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_wednesday" />
+
+
+        <TextView
         android:id="@+id/tv_class_updated"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -105,7 +164,7 @@
         android:text="Class Updated"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_friday" />
 
 
     <TextView

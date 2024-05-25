@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_homeFragment_to_updateClassListFragment"
             app:destination="@id/updateClassListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_mondayScheduleFragment"
+            app:destination="@id/mondayScheduleFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -77,4 +80,16 @@
         android:id="@+id/totalAttendanceFragment"
         android:name="com.example.nelsonfinalyearproject.profile.TotalAttendanceFragment"
         android:label="TotalAttendanceFragment" />
+    <fragment
+        android:id="@+id/mondayScheduleFragment"
+        android:name="com.example.nelsonfinalyearproject.profile.MondayScheduleFragment"
+        android:label="MondayScheduleFragment" >
+        <action
+            android:id="@+id/action_mondayScheduleFragment_to_addMondayScheduleFragment"
+            app:destination="@id/addMondayScheduleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMondayScheduleFragment"
+        android:name="com.example.nelsonfinalyearproject.profile.AddMondayScheduleFragment"
+        android:label="AddMondayScheduleFragment" />
 </navigation>

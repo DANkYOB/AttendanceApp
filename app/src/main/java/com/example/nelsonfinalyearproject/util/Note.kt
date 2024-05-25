@@ -11,5 +11,5 @@ data class Note(
     @PrimaryKey
     val id: String,
     val title: String,
-    val body: String,
+    val body: String
 ) : Parcelable

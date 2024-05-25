@@ -41,7 +41,6 @@ class HomeFragment : Fragment() {
 
     private lateinit var noteSaver: NoteSaver
     private lateinit var adapter: UpdateClassAdapter
-    private lateinit var adapter2: TodayClassAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -56,6 +55,10 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initViews()
+
+        binding.tvMonday.setOnClickListener{
+            findNavController().navigate(R.id.action_homeFragment_to_mondayScheduleFragment)
+        }
 
 
 
@@ -77,8 +80,6 @@ class HomeFragment : Fragment() {
             }
         })
 
-        adapter2 = TodayClassAdapter()
-        binding.recyclerView.adapter = adapter2
 
         //classes
         lifecycle.coroutineScope.launch {
@@ -92,33 +93,6 @@ class HomeFragment : Fragment() {
                 val subject = it.getValue(SubjectModel::class.java)!!
                 subjects.add(subject)
             }
-//
-//            //subjects - show in adapter
-//            val currentTime = System.currentTimeMillis()
-//            val midnightTime = getMidnightTimestamp()
-//            val weekDay = getWeekDay()
-//            Log.e("weekDay", weekDay.toString())
-//
-//            for (sub in subjects) {
-//                Log.e("sub", sub.toString())
-//                val todayTimings = sub.timings?.get(weekDay)
-//                if (!todayTimings.isNullOrEmpty()) {
-//                    for (slot in todayTimings) {
-//                        if (
-//                            currentTime > (slot[0] * 60 * 1000) + midnightTime &&
-//                            currentTime < (slot[1] * 60 * 1000) + midnightTime
-//                        ) {
-//                            //Class is ongoing
-//                        } else if (
-//                            currentTime > (slot[0] * 60 * 1000) + midnightTime &&
-//                            currentTime > (slot[1] * 60 * 1000) + midnightTime
-//                        ) {
-//                            //class ended
-//                        } else if (currentTime < (slot[0] * 60 * 1000) + midnightTime) {
-//                            //upcoming class
-//                        }
-//                    }
-//                }
         }
 
 
@@ -154,19 +128,7 @@ class HomeFragment : Fragment() {
         }
     }
 
-//    private fun getMidnightTimestamp(): Long {
-//        val calendar = Calendar.getInstance()
-//        calendar.set(Calendar.MILLISECOND, 0)
-//        calendar.set(Calendar.SECOND, 0)
-//        calendar.set(Calendar.MINUTE, 0)
-//        calendar.set(Calendar.HOUR_OF_DAY, 0)
-//        return calendar.timeInMillis
-//    }
-//
-//    private fun getWeekDay(): Int {
-//        val calendar = Calendar.getInstance()
-//        return calendar.get(Calendar.DAY_OF_WEEK) - 2
-//    }
+
 private fun initViews() {
     viewLifecycleOwner.lifecycleScope.launch {
         FirebaseUserUtil.getFirebaseUserData()?.let { user ->

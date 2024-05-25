@@ -1,4 +1,4 @@
-package com.example.nelsonfinalyearproject.Settings
+package com.example.nelsonfinalyearproject.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,26 +7,29 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.fragment.findNavController
-import com.example.nelsonfinalyearproject.Adapters.UpdateClassListAdapter
+import com.example.nelsonfinalyearproject.Adapters.MondayScheduleAdapter
 import com.example.nelsonfinalyearproject.R
-import com.example.nelsonfinalyearproject.databinding.FragmentClassUpdateListBinding
+import com.example.nelsonfinalyearproject.databinding.FragmentModayScheduleBinding
 import com.example.nelsonfinalyearproject.util.Note
 import com.example.nelsonfinalyearproject.util.NoteSaver
 import com.example.nelsonfinalyearproject.util.UpdateClassAdapterListener
 
-class UpdateClassListFragment : Fragment() {
+class MondayScheduleFragment:Fragment() {
+    companion object {
 
-    private lateinit var binding: FragmentClassUpdateListBinding
+        private const val ADD_NOTE_RESULT = 1267
 
+    }
+    private lateinit var binding: FragmentModayScheduleBinding
     private lateinit var noteSaver: NoteSaver
-    private lateinit var adapter: UpdateClassListAdapter
+    private lateinit var adapter: MondayScheduleAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentClassUpdateListBinding.inflate(layoutInflater)
+        binding = FragmentModayScheduleBinding.inflate(layoutInflater)
         return binding.root
     }
 
@@ -44,22 +47,27 @@ class UpdateClassListFragment : Fragment() {
             addNote(note)
         }
 
-        adapter = UpdateClassListAdapter(object : UpdateClassAdapterListener {
+        adapter = MondayScheduleAdapter(object : UpdateClassAdapterListener {
             override fun onItemDelete(pos: Int, note: Note) {
-                deleteNote(pos, note)
-
-
+                deleteNote(pos,note)
             }
+
+
         })
+        binding.recyclerView.adapter = adapter
 
-        binding.recyclerViewClassUpdate.adapter = adapter
+        binding.btnSave.setOnClickListener {
+            findNavController().navigate(R.id.action_mondayScheduleFragment_to_addMondayScheduleFragment)
+        }
 
-
+        //load all the saved notes
         val savedNotes = noteSaver.getAllNotes()
         if (savedNotes.isEmpty()) {
-            binding.recyclerViewClassUpdate.visibility = View.GONE
+            binding.animationView.visibility = View.VISIBLE
+            binding.recyclerView.visibility = View.GONE
         } else {
-            binding.recyclerViewClassUpdate.visibility = View.VISIBLE
+            binding.animationView.visibility = View.GONE
+            binding.recyclerView.visibility = View.VISIBLE
             adapter.addNotes(savedNotes)
         }
 
@@ -70,19 +78,19 @@ class UpdateClassListFragment : Fragment() {
         adapter.deleteNote(pos)
 
         if (adapter.itemCount == 0) {
-            binding.recyclerViewClassUpdate.visibility = View.GONE
+            binding.animationView.visibility = View.VISIBLE
+            binding.recyclerView.visibility = View.GONE
         }
     }
 
-    private fun navigateToClassUpdate() {
-        findNavController().navigate(R.id.updateClassFragment)
-    }
 
     private fun addNote(note: Note) {
         adapter.addNote(note)
         noteSaver.saveNote(note)
+
         if (adapter.itemCount > 0) {
-            binding.recyclerViewClassUpdate.visibility = View.VISIBLE
+            binding.animationView.visibility = View.GONE
+            binding.recyclerView.visibility = View.VISIBLE
         }
     }
 }
