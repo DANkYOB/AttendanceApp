@@ -68,19 +68,19 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
 
 
-
-
     <TextView
         android:id="@+id/tv_monday"
+        style="@style/ClickableView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/ic_rectangle_1"
-        style="@style/ClickableView"
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="25dp"
         android:text="Moday Class \nSchedule"
+        app:layout_constraintEnd_toStartOf="@+id/tv_tuesday"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_today_class" />
 
@@ -92,7 +92,7 @@
         android:gravity="center"
         android:fontFamily="@font/poppins_bold"
         style="@style/ClickableView"
-        android:layout_marginEnd="25dp"
+        android:layout_marginEnd="10dp"
         android:text="Tuesday Class \nSchedule"
         app:layout_constraintBottom_toBottomOf="@+id/tv_monday"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,15 +100,17 @@
 
     <TextView
         android:id="@+id/tv_wednesday"
+        style="@style/ClickableView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/ic_rectangle_1"
         android:fontFamily="@font/poppins_bold"
-        style="@style/ClickableView"
         android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="25dp"
         android:text="Wednesday Class \nSchedule"
+        app:layout_constraintEnd_toStartOf="@+id/tv_thursday"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_monday" />
 
@@ -120,7 +122,7 @@
         android:fontFamily="@font/poppins_bold"
         style="@style/ClickableView"
         android:gravity="center"
-        android:layout_marginEnd="25dp"
+        android:layout_marginEnd="10dp"
         android:text="Thursday Class \nSchedule"
         app:layout_constraintBottom_toBottomOf="@+id/tv_wednesday"
         app:layout_constraintEnd_toEndOf="parent"
@@ -128,15 +130,15 @@
 
     <TextView
         android:id="@+id/tv_friday"
+        style="@style/ClickableView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:background="@drawable/ic_rectangle_1"
         android:fontFamily="@font/poppins_bold"
-        style="@style/ClickableView"
         android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="25dp"
         android:text="Friday Class \nSchedule"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_wednesday" />
 

@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
         android:layout_marginStart="40dp"
-        android:text="Monday Class Schedule"
+        android:text="Wednesday Class Schedule"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/btn_back"
         app:layout_constraintStart_toEndOf="@+id/btn_back"

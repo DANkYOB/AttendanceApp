@@ -77,6 +77,7 @@
         android:fontFamily="@font/poppins_medium"
         android:text="Edit Profile"
         style="@style/ClickableView"
+        android:textColor="@color/white"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
