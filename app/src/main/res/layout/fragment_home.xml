@@ -69,26 +69,13 @@
 
 
 
-    <TextView
-        android:id="@+id/tv_view_all_today_class"
-        style="@style/ClickableViewBorderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="View All"
-        android:textColor="#1DA1FA"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_today_class"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_today_class" />
 
     <TextView
         android:id="@+id/tv_monday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/ic_rectangle_1"
-        style="@style/ClickableViewBorderless"
+        style="@style/ClickableView"
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
         android:layout_marginTop="20dp"
@@ -104,7 +91,7 @@
         android:background="@drawable/ic_rectangle_1"
         android:gravity="center"
         android:fontFamily="@font/poppins_bold"
-        style="@style/ClickableViewBorderless"
+        style="@style/ClickableView"
         android:layout_marginEnd="25dp"
         android:text="Tuesday Class \nSchedule"
         app:layout_constraintBottom_toBottomOf="@+id/tv_monday"
@@ -117,7 +104,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/ic_rectangle_1"
         android:fontFamily="@font/poppins_bold"
-        style="@style/ClickableViewBorderless"
+        style="@style/ClickableView"
         android:gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginStart="25dp"
@@ -131,7 +118,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/ic_rectangle_1"
         android:fontFamily="@font/poppins_bold"
-        style="@style/ClickableViewBorderless"
+        style="@style/ClickableView"
         android:gravity="center"
         android:layout_marginEnd="25dp"
         android:text="Thursday Class \nSchedule"
@@ -145,7 +132,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/ic_rectangle_1"
         android:fontFamily="@font/poppins_bold"
-        style="@style/ClickableViewBorderless"
+        style="@style/ClickableView"
         android:gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginStart="25dp"

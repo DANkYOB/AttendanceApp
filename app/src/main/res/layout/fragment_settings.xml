@@ -138,31 +138,5 @@
         app:layout_constraintTop_toTopOf="@+id/tv_password_change"
         tools:ignore="ContentDescription" />
 
-    <TextView
-        android:id="@+id/tv_contact_details"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="42dp"
-        android:fontFamily="@font/poppins_bold"
-        android:gravity="center"
-        android:text="Password Change"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_password_change"
-        tools:ignore="HardcodedText" />
-
-    <ImageView
-        android:id="@+id/btn_next_contact_details"
-        style="@style/ClickableView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:src="@drawable/ic_chevron_right"
-        android:layout_marginEnd="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_contact_details"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_contact_details"
-        tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

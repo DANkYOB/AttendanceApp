@@ -22,8 +22,20 @@
             android:id="@+id/action_homeFragment_to_updateClassListFragment"
             app:destination="@id/updateClassListFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_mondayScheduleFragment"
-            app:destination="@id/mondayScheduleFragment" />
+            android:id="@+id/action_homeFragment_to_mondayScheduleFragment2"
+            app:destination="@id/mondayScheduleFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_tuesdayFragment"
+            app:destination="@id/tuesdayFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_wednesdayFragment"
+            app:destination="@id/wednesdayFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_thursdayFragment"
+            app:destination="@id/thursdayFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_fridayFragment"
+            app:destination="@id/fridayFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -67,11 +79,13 @@
     <fragment
         android:id="@+id/updateClassListFragment"
         android:name="com.example.nelsonfinalyearproject.Settings.UpdateClassListFragment"
-        android:label="UpdateClassListFragment" />
+        android:label="UpdateClassListFragment"
+        tools:layout="@layout/fragment_update_class"/>
     <fragment
         android:id="@+id/myProfileFragment"
         android:name="com.example.nelsonfinalyearproject.profile.MyProfileFragment"
-        android:label="MyProfileFragment" >
+        android:label="MyProfileFragment"
+        tools:layout="@layout/fragment_profile">
         <action
             android:id="@+id/action_myProfileFragment_to_totalAttendanceFragment"
             app:destination="@id/totalAttendanceFragment" />
@@ -79,17 +93,31 @@
     <fragment
         android:id="@+id/totalAttendanceFragment"
         android:name="com.example.nelsonfinalyearproject.profile.TotalAttendanceFragment"
-        android:label="TotalAttendanceFragment" />
+        android:label="TotalAttendanceFragment"
+        tools:layout="@layout/fragment_total_attendance"/>
     <fragment
-        android:id="@+id/mondayScheduleFragment"
-        android:name="com.example.nelsonfinalyearproject.profile.MondayScheduleFragment"
-        android:label="MondayScheduleFragment" >
-        <action
-            android:id="@+id/action_mondayScheduleFragment_to_addMondayScheduleFragment"
-            app:destination="@id/addMondayScheduleFragment" />
-    </fragment>
+        android:id="@+id/mondayScheduleFragment2"
+        android:name="com.example.nelsonfinalyearproject.Home.ClassSchedule.MondayScheduleFragment"
+        android:label="MondayScheduleFragment"
+        tools:layout="@layout/fragment_moday_schedule"/>
     <fragment
-        android:id="@+id/addMondayScheduleFragment"
-        android:name="com.example.nelsonfinalyearproject.profile.AddMondayScheduleFragment"
-        android:label="AddMondayScheduleFragment" />
+        android:id="@+id/tuesdayFragment"
+        android:name="com.example.nelsonfinalyearproject.Home.ClassSchedule.TuesdayFragment"
+        android:label="TuesdayFragment"
+        tools:layout="@layout/fragment_tuesday_schedule"/>
+    <fragment
+        android:id="@+id/wednesdayFragment"
+        android:name="com.example.nelsonfinalyearproject.Home.ClassSchedule.WednesdayFragment"
+        android:label="WednesdayFragment"
+        tools:layout="@layout/fragment_wednesday_schedule"/>
+    <fragment
+        android:id="@+id/thursdayFragment"
+        android:name="com.example.nelsonfinalyearproject.Home.ClassSchedule.ThursdayFragment"
+        android:label="ThursdayFragment"
+        tools:layout="@layout/fragment_thursday_schedule"/>
+    <fragment
+        android:id="@+id/fridayFragment"
+        android:name="com.example.nelsonfinalyearproject.Home.ClassSchedule.FridayFragment"
+        android:label="FridayFragment"
+        tools:layout="@layout/fragment_friday_schedule"/>
 </navigation>

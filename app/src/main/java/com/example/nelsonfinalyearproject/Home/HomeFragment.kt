@@ -5,14 +5,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResultListener
-import androidx.lifecycle.coroutineScope
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
-import com.example.nelsonfinalyearproject.Adapters.TodayClassAdapter
 import com.example.nelsonfinalyearproject.Adapters.UpdateClassAdapter
 import com.example.nelsonfinalyearproject.R
 import com.example.nelsonfinalyearproject.databinding.FragmentHomeBinding
@@ -20,14 +17,12 @@ import com.example.nelsonfinalyearproject.util.FirebaseUserUtil
 import com.example.nelsonfinalyearproject.util.Note
 import com.example.nelsonfinalyearproject.util.NoteSaver
 import com.example.nelsonfinalyearproject.util.UpdateClassAdapterListener
-import com.google.firebase.Firebase
-import com.google.firebase.database.database
-import com.google.firebase.firestore.firestore
+
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
-import java.util.Calendar
+
 
 class HomeFragment : Fragment() {
 
@@ -56,9 +51,27 @@ class HomeFragment : Fragment() {
 
         initViews()
 
-        binding.tvMonday.setOnClickListener{
-            findNavController().navigate(R.id.action_homeFragment_to_mondayScheduleFragment)
+        binding.tvMonday.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_mondayScheduleFragment2)
         }
+
+        binding.tvTuesday.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_tuesdayFragment)
+        }
+
+        binding.tvWednesday.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_wednesdayFragment)
+        }
+
+        binding.tvThursday.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_thursdayFragment)
+        }
+
+        binding.tvFriday.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_fridayFragment)
+        }
+
+
 
 
 
@@ -81,19 +94,8 @@ class HomeFragment : Fragment() {
         })
 
 
-        //classes
-        lifecycle.coroutineScope.launch {
-            val docs = Firebase.database.reference
-                .child("s1")
-                .child("sub")
-                .get()
-                .await()
-            val subjects = mutableListOf<SubjectModel>()
-            docs.children.forEach {
-                val subject = it.getValue(SubjectModel::class.java)!!
-                subjects.add(subject)
-            }
-        }
+
+
 
 
         binding.recyclerViewClassUpdate.adapter = adapter
@@ -112,8 +114,6 @@ class HomeFragment : Fragment() {
         }
 
 
-
-
     }
 
     private fun navigateToClassUpdate() {
@@ -129,17 +129,31 @@ class HomeFragment : Fragment() {
     }
 
 
-private fun initViews() {
-    viewLifecycleOwner.lifecycleScope.launch {
-        FirebaseUserUtil.getFirebaseUserData()?.let { user ->
-            Log.e("user", user.toString())
-            withContext(Dispatchers.Main) {
-                binding.tvStudentName.text = user.name
-                binding.tvStudentDept.text = user.dept
-                Glide.with(binding.profilePic).load(user.photo).into(binding.profilePic)
+    private fun initViews() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            FirebaseUserUtil.getFirebaseUserData()?.let { user ->
+                Log.e("user", user.toString())
+                withContext(Dispatchers.Main) {
+                    binding.tvStudentName.text = user.name
+                    binding.tvStudentDept.text = user.dept
+                    Glide.with(binding.profilePic).load(user.photo).into(binding.profilePic)
+                }
             }
         }
-    }
 
+    }
 }
-}
+
+//classes
+//        lifecycle.coroutineScope.launch {
+//            val docs = Firebase.database.reference
+//                .child("s1")
+//                .child("sub")
+//                .get()
+//                .await()
+//            val subjects = mutableListOf<SubjectModel>()
+//            docs.children.forEach {
+//                val subject = it.getValue(SubjectModel::class.java)!!
+//                subjects.add(subject)
+//            }
+//        }

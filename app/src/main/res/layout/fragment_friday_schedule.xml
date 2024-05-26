@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
         android:layout_marginStart="40dp"
-        android:text="Monday Class Schedule"
+        android:text="Friday Class Schedule"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/btn_back"
         app:layout_constraintStart_toEndOf="@+id/btn_back"
@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/rectangle_4"
-        android:text="PROJECT-Stage II \n(EC421)\n\n9:10AM - 11:30AM"
+        android:text="PROJECT-Stage II \n(EC421)\n\n9:10AM - 12:30PM"
         app:layout_constraintStart_toStartOf="parent"
         android:fontFamily="@font/poppins_bold"
         android:layout_marginStart="25dp"
@@ -46,13 +46,14 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_back" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/sub3"
+        android:layout_width="162dp"
+        android:layout_height="111dp"
         android:background="@drawable/rectangle_4"
         android:fontFamily="@font/poppins_bold"
         android:padding="16dp"
         android:layout_marginEnd="25dp"
-        android:text="EC419  (RKB) \n\n\n11:30AM - 12:30PM"
+        android:text="Break  \nTime\n\n1:30PM - 2:30PM"
         app:layout_constraintBottom_toBottomOf="@+id/sub1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/sub1" />
@@ -62,7 +63,7 @@
         android:layout_width="162dp"
         android:layout_height="111dp"
         android:background="@drawable/rectangle_4"
-        android:text="Break  \nTime\n\n1:30PM - 2:30PM"
+        android:text="PROJECT-Stage II \n(EC421)\n\n2:30PM - 5:30PM"
         app:layout_constraintStart_toStartOf="parent"
         android:fontFamily="@font/poppins_bold"
         android:layout_marginStart="25dp"
@@ -70,17 +71,7 @@
         android:padding="16dp"
         app:layout_constraintTop_toBottomOf="@+id/sub1" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rectangle_4"
-        android:fontFamily="@font/poppins_bold"
-        android:padding="16dp"
-        android:layout_marginEnd="25dp"
-        android:text="PROJECT-Stage II \n(EC421)\n\n2:30PM - 5:30PM"
-        app:layout_constraintBottom_toBottomOf="@+id/sub2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/sub2" />
+
 
 
 
