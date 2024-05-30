@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_homeFragment_to_fridayFragment"
             app:destination="@id/fridayFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -120,4 +123,8 @@
         android:name="com.example.nelsonfinalyearproject.Home.ClassSchedule.FridayFragment"
         android:label="FridayFragment"
         tools:layout="@layout/fragment_friday_schedule"/>
+    <activity
+        android:id="@+id/cameraFragment"
+        android:name="com.example.nelsonfinalyearproject.camera.CameraFragment"
+        android:label="CameraFragment" />
 </navigation>

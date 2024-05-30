@@ -82,6 +82,12 @@ dependencies {
 
     implementation("androidx.room:room-runtime:2.6.1")
     kapt("androidx.room:room-compiler:2.6.1")
+    implementation ("com.google.mlkit:face-detection:16.0.3")
+    implementation ("androidx.camera:camera-core:1.1.0")
+    implementation ("androidx.camera:camera-camera2:1.1.0")
+    implementation ("androidx.camera:camera-lifecycle:1.1.0")
+    implementation ("androidx.camera:camera-view:1.0.0-alpha30")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.4.0")
 
     implementation("com.airbnb.android:lottie:6.3.0")
 

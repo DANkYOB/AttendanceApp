@@ -70,6 +70,10 @@ class HomeFragment : Fragment() {
         binding.tvFriday.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_fridayFragment)
         }
+        binding.clickPhoto.setOnClickListener{
+        findNavController().navigate(R.id.action_homeFragment_to_cameraFragment)
+        }
+
 
 
 
