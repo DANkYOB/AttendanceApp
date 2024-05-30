@@ -40,6 +40,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".camera.CameraFragment"
+            android:exported="true"
+            android:theme="@style/Base.Theme.NelsonFinalYearProject">
+
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"

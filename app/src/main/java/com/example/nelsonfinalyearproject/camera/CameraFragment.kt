@@ -31,6 +31,8 @@ class CameraFragment: AppCompatActivity() {
     private lateinit var cameraExecutor: ExecutorService
     private lateinit var binding:FragmentCameraBinding
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_camera)
