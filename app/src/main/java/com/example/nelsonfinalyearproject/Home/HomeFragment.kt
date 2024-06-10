@@ -108,7 +108,7 @@ class HomeFragment : Fragment() {
             navigateToClassUpdate()
         }
 
-        //load all the saved notes
+
         val savedNotes = noteSaver.getAllNotes()
         if (savedNotes.isEmpty()) {
             binding.recyclerViewClassUpdate.visibility = View.GONE
@@ -147,17 +147,3 @@ class HomeFragment : Fragment() {
 
     }
 }
-
-//classes
-//        lifecycle.coroutineScope.launch {
-//            val docs = Firebase.database.reference
-//                .child("s1")
-//                .child("sub")
-//                .get()
-//                .await()
-//            val subjects = mutableListOf<SubjectModel>()
-//            docs.children.forEach {
-//                val subject = it.getValue(SubjectModel::class.java)!!
-//                subjects.add(subject)
-//            }
-//        }
